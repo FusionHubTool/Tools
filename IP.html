@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IP Address</title>
+</head>
+<body>
+    <h1>Your IP Address:</h1>
+    <p id="ip-address">Loading...</p>
+
+    <script>
+        // Use a simple HTTP request to get the user's IP address
+        fetch('https://api64.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                const ipAddress = data.ip;
+                document.getElementById('ip-address').textContent = ipAddress;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('ip-address').textContent = 'Error fetching IP address';
+            });
+    </script>
+</body>
+</html>
