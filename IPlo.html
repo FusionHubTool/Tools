@@ -1,40 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IP Address Location</title>
+    <title>IP Geolocation</title>
 </head>
 <body>
-    <h1>IP Address Location</h1>
-    <input type="text" id="ipInput" placeholder="Enter an IP address">
-    <button onclick="getLocation()">Get Location</button>
-    <p id="locationInfo"></p>
+    <h1>IP Geolocation Information</h1>
+    <p>IP Address: <span id="ipAddress"></span></p>
+    <p>City: <span id="city"></span></p>
+    <p>Country: <span id="country"></span></p>
+    <p>State: <span id="state"></span></p>
 
     <script>
-        function getLocation() {
-            const ipAddress = document.getElementById("ipInput").value;
-            const apiUrl = `http://ip-api.com/json/${ipAddress}`;
+        // Replace 'your_api_key' with your actual API key from a geolocation service provider
+        const apiKey = 'your_api_key';
+        const ipAddress = '8.8.8.8'; // Replace with the IP address you want to look up
 
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    const locationInfo = `
-                        IP Address: ${data.query}<br>
-                        Country: ${data.country}<br>
-                        Region: ${data.regionName}<br>
-                        City: ${data.city}<br>
-                        Latitude: ${data.lat}<br>
-                        Longitude: ${data.lon}<br>
-                        ISP: ${data.isp}
-                    `;
-                    document.getElementById("locationInfo").innerHTML = locationInfo;
-                })
-                .catch(error => {
-                    console.error(error);
-                    document.getElementById("locationInfo").innerHTML = "Error fetching location information.";
-                });
-        }
+        const apiUrl = `https://ipgeolocationapi.com/api/v1/ip/${ipAddress}?apiKey=${apiKey}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ipAddress').textContent = data.ip;
+                document.getElementById('city').textContent = data.city;
+                document.getElementById('country').textContent = data.country_name;
+                document.getElementById('state').textContent = data.state_prov;
+            })
+            .catch(error => console.error('Error:', error));
     </script>
 </body>
 </html>
