@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website IP Lookup</title>
+    <script>
+        function lookup() {
+            var inputUrl = document.getElementById("inputUrl").value;
+            var resultDiv = document.getElementById("result");
+
+            // Clear previous results
+            resultDiv.innerHTML = "";
+
+            // Use an API to fetch IP address and website details
+            fetch("https://ipinfo.io/" + inputUrl + "/json")
+                .then(response => response.json())
+                .then(data => {
+                    // Display the IP address
+                    var ipAddress = document.createElement("p");
+                    ipAddress.textContent = "IP Address: " + data.ip;
+                    resultDiv.appendChild(ipAddress);
+
+                    // Display other details (e.g., organization, city, region)
+                    var details = document.createElement("p");
+                    details.textContent = "Details: " + data.org + ", " + data.city + ", " + data.region;
+                    resultDiv.appendChild(details);
+                })
+                .catch(error => {
+                    // Handle errors
+                    var errorMessage = document.createElement("p");
+                    errorMessage.textContent = "Error: " + error.message;
+                    resultDiv.appendChild(errorMessage);
+                });
+        }
+    </script>
+</head>
+<body>
+    <h1>Website IP Lookup</h1>
+    <p>Enter a website URL to get its IP address and details:</p>
+    <input type="text" id="inputUrl" placeholder="Enter website URL">
+    <button onclick="lookup()">Lookup</button>
+    <div id="result"></div>
+</body>
+</html>
