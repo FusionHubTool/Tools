@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>IP Geolocation</title>
+    <title>IP Lookup</title>
 </head>
 <body>
-    <h1>IP Geolocation Information</h1>
-    <p>IP Address: <span id="ipAddress"></span></p>
-    <p>City: <span id="city"></span></p>
-    <p>Country: <span id="country"></span></p>
-    <p>State: <span id="state"></span></p>
+    <h1>IP Address to Full Address</h1>
+    
+    <form id="ipForm">
+        <label for="ipInput">Enter IP Address:</label>
+        <input type="text" id="ipInput" name="ipAddress" placeholder="Enter an IP address">
+        <button type="submit">Get Full Address</button>
+    </form>
+    
+    <p>Full Address: <span id="fullAddress"></span></p>
 
     <script>
-        // Replace 'your_api_key' with your actual API key from a geolocation service provider
-        const apiKey = '75269cba5fd6006c78278c6721e06978';
-        const ipAddress = '8.8.8.8'; // Replace with the IP address you want to look up
-
-        const apiUrl = `https://ipgeolocationapi.com/api/v1/ip/${ipAddress}?apiKey=${apiKey}`;
-
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('ipAddress').textContent = data.ip;
-                document.getElementById('city').textContent = data.city;
-                document.getElementById('country').textContent = data.country_name;
-                document.getElementById('state').textContent = data.state_prov;
-            })
-            .catch(error => console.error('Error:', error));
+        document.getElementById('ipForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const ipAddress = document.getElementById('ipInput').value;
+            
+            fetch(`https://ipinfo.io/${ipAddress}/json`)
+                .then(response => response.json())
+                .then(data => {
+                    const fullAddress = `${data.city}, ${data.region}, ${data.country} ${data.postal}`;
+                    document.getElementById('fullAddress').textContent = fullAddress;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('fullAddress').textContent = 'Could not retrieve address information for the provided IP.';
+                });
+        });
     </script>
 </body>
 </html>
