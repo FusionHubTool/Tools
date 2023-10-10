@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>IP Address</title>
+    <title>My IP Address</title>
 </head>
 <body>
     <h1>Your IP Address:</h1>
     <p id="ip-address">Loading...</p>
 
     <script>
-        // Use a simple HTTP request to get the user's IP address
-        fetch('https://api64.ipify.org?format=json')
+        // Use an API to fetch the user's IP address
+        fetch('https://api.ipify.org?format=json')
             .then(response => response.json())
             .then(data => {
-                const ipAddress = data.ip;
-                document.getElementById('ip-address').textContent = ipAddress;
+                // Update the paragraph element with the IP address
+                document.getElementById('ip-address').textContent = data.ip;
             })
             .catch(error => {
-                console.error('Error:', error);
-                document.getElementById('ip-address').textContent = 'Error fetching IP address';
+                // Handle any errors that occur during the fetch
+                console.error('Error fetching IP address:', error);
             });
     </script>
 </body>
