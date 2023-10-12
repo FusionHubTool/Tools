@@ -7,37 +7,21 @@
   </head>
   <body>
     <header>
-
 <nav>
-
 <ul>
-
-<li><a href="#">Home</a></li>
-
-<li><a href="#">About</a></li>
-
-<li><a href="#">Services</a></li>
-
+   <li><a href="#">Home</a></li>
+   <li><a href="#">About</a></li>
+   <li><a href="#">Services</a></li>
 <!-- Add more items here -->
-
-<li class="more">
-
-<a href="#">More</a>
-
-<ul class="dropdown">
-
-<!-- Additional menu items go here
-
+   <li class="more">
+   <a href="#">More</a>
+   <ul class="dropdown">
+<!-- Additional menu items go here-->
 <li><a href="#">Contact</a></li>
-
 <li><a href="#">Blog</a></li>
-
-</ul>
-
-</li>
-
-</ul>
-
+      </ul>
+    </li>
+  </ul>
 </nav>
 
 </header>
@@ -45,20 +29,18 @@
   <style>
   header {
 background-color: #333;
-}
 color: #fff;
-  
+  }
 nav ul {
 list-style: none;
 padding: 0;
-}
-
 margin: 0;
+}
 nav ul li {
 display: inline-block;
 margin-right: 20px;
 }
-.more [
+.more {
 position: relative;
 }
 .dropdown (
@@ -67,14 +49,15 @@ display: none;
 top: 100%; 
 background-color: #333;
 left: 0;}
-more:hover .dropdown [
+more:hover .dropdown {
 display: block;
 }
 -dropdown li {
 display: block; padding: 10px;
 }
 .dropdown a {
-color: #fff; text-decoration: none;
+color: #fff; 
+  text-decoration: none;
 }
 </style>
   <style>
