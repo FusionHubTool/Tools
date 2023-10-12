@@ -34,6 +34,30 @@
     </script>
 </head>
 <body>
+    <header>
+  <!-- Top Navigation Menu -->
+  <div class="topnav" id="myTopnav">
+    <a href="#home" class="active">CYBERLUM</a>
+    <!-- Navigation links (hidden by default) -->
+    <a href="index.html">Home</a>
+    <a href="tools.html">Tools</a>
+    <a href="about.html">About</a>
+    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</header>
+    <script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
     <h1>I.P Network Provider</h1>
     <p>Enter a I.P to get its network provider and details:</p>
     <input type="text" id="inputIP" placeholder="Enter Target IP">
