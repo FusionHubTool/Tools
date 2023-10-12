@@ -7,34 +7,7 @@
     <head>
   <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-  <body>
-    <header>
-  <!-- Top Navigation Menu -->
-  <div class="topnav" id="myTopnav">
-    <a href="#home" class="active">CYBERLUM</a>
-    <!-- Navigation links (hidden by default) -->
-    <a href="index.html">Home</a>
-    <a href="tools.html">Tools</a>
-    <a href="about.html">About</a>
-    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-</header>
-    <script>
-  function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
-</script>
-<div>
-  <style>
+ <style>
     /* Style for the navigation menu */
     .topnav {
       overflow: hidden;
@@ -77,6 +50,7 @@
         right: 0;
         top: 0;
       }
+    
       .topnav.responsive a {
         float: none;
         display: block;
@@ -84,6 +58,34 @@
       }
     }
   </style>
+    </head>
+  <body>
+    <header>
+  <!-- Top Navigation Menu -->
+  <div class="topnav" id="myTopnav">
+    <a href="#home" class="active">CYBERLUM</a>
+    <!-- Navigation links (hidden by default) -->
+    <a href="index.html">Home</a>
+    <a href="tools.html">Tools</a>
+    <a href="about.html">About</a>
+    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</header>
+    <script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+<div>
+ 
   <style>
   header {
 background-color: #333;
@@ -130,11 +132,6 @@ text-decoration: none;
   </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </div>    
-    <style>
-    body {
-      text-align="center";
-    }
-    </style>
     <article><h1>Select Your Tools</h1><br>
 <h3>Know Your Coordinates</h3><br>
    <a href="location.html"> <img src="Images/geo.png"></a><br>
