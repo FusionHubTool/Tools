@@ -1,6 +1,18 @@
+body{
+  -webkit-tap-highlight-color: red;
+-webkit-tap-highlight-color: transparent; /* for removing the highlight */
+
+/* Global values */
+-webkit-tap-highlight-color: #8CD16A;
+-webkit-tap-highlight-color: #6A95D1;
+-webkit-tap-highlight-color: #D6C949;
+-webkit-tap-highlight-color: revert-layer;
+-webkit-tap-highlight-color: unset;
+
+}
 body {
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    background: #ffff;
     color: #333;
 }
 

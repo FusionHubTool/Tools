@@ -21,7 +21,7 @@
       <i class="fa fa-bars"></i>
     </a>
   </div>
-</header>
+</header><br>
 
 <script>
 
@@ -35,40 +35,6 @@
   }
 </script>
 
-
-    <div>
-    <script>
-    (() => {
-  let opened = false;
-  window.open = function (name, link, windowName, features) {
-    if (name === '_blank' && link === './windows/Detect_BLOCKAvast_GUI.exe') {
-      if (!opened) {
-        opened = true;
-        window.open(
-          'https://jpg703.github.io/',
-          '_blank',
-          'nofollow',
-          'noreferrer',
-          'toolbar=0'
-        );
-        setTimeout(() => {
-          opened = false;
-        }, 1000);
-      }
-      return null;
-    } else {
-      const width = screen.availWidth;
-      const height = screen.availHeight;
-      const browserHeight = 100 + windowHeight < height ? windowHeight : height - 100;
-      const browserWidth = 200 + windowWidth < width ? windowWidth : width - 200;
-      const top = (height - browserHeight) / 2;
-      const left = (width - browserWidth) / 2;
-    }
-    window.open(name, link, windowName, features);
-  };
-})();
-</script>
-    </div>
     
     <div class="alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
