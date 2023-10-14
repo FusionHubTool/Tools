@@ -1,56 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>VPN Strength Checker</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: #f6f8fa;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-      }
-      h1 {
-        font-size: 32px;
-        font-weight: 600;
-        color: #24292e;
-        margin-bottom: 16px;
-      }
-      .strength {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin: 16px;
-      }
-      .circle {
-        margin-right: 8px;
-        width: 20px;
-        height: 20px;
-        border-radius: 10px;
-      }
-      .circle.green {
-        background-color: green;
-      }
-      .circle.yellow {
-        background-color: yellow;
-      }
-      .circle.red {
-        background-color: red;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>VPN Strength</h1>
-    <div class="strength">
-      <div class="circle green"></div>
-      <p>Strong</p>
-    </div>
-  </body>
+<head>
+  <title>VPN Strength Detector</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .vpn-strength {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+
+    .vpn-strength-weak {
+      color: red;
+    }
+
+    .vpn-strength-medium {
+      color: orange;
+    }
+
+    .vpn-strength-strong {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>VPN Strength Detector</h1>
+
+  <div class="vpn-strength">
+    <p>Your VPN strength is:</p>
+    <span id="vpn-strength-text"></span>
+  </div>
+
+  <script>
+    // Get the user's VPN connection information.
+    const vpnConnection = navigator.connection;
+
+    // Check if the user is connected to a VPN.
+    if (vpnConnection.effectiveType === "3gpp" || vpnConnection.effectiveType === "4g" || vpnConnection.effectiveType === "5g") {
+      // The user is connected to a mobile network, which is not a VPN.
+      document.getElementById("vpn-strength-text").innerHTML = "Not connected to a VPN.";
+    } else {
+      // The user is connected to a VPN.
+
+      // Get the VPN's IP address.
+      const vpnIpAddress = vpnConnection.ipAddress;
+
+      // Use a VPN strength testing service to test the VPN's strength.
+      const vpnStrengthTestingServiceUrl = "https://example.com/vpn-strength-test/";
+
+      // Make an asynchronous request to the VPN strength testing service.
+      fetch(vpnStrengthTestingServiceUrl + vpnIpAddress)
+        .then(response => response.json())
+        .then(data => {
+          // Get the VPN's strength from the response data.
+          const vpnStrength = data.vpnStrength;
+
+          // Update the VPN strength text on the page.
+          document.getElementById("vpn-strength-text").innerHTML = vpnStrength;
+
+          // Add a CSS class to the VPN strength text element based on the VPN's strength.
+          document.getElementById("vpn-strength-text").classList.add(`vpn-strength-${vpnStrength}`);
+        });
+    }
+  </script>
+</body>
 </html>
