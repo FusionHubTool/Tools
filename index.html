@@ -4,78 +4,25 @@
     <meta charset=""UTF-8>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FusionHub</title>
+    <link rel="stylesheet" href="style.css">
     <head>
   <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- <style>
-    /* Style for the navigation menu */
-    .topnav {
-      overflow: hidden;
-      background-color: #000;
-    }
-
-    .topnav a {
-      float: left;
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-
-    /* Style for the "hamburger menu" icon */
-    .icon {
-      display: none;
-    }
-
-    /* Media query for small screens */
-    @media screen and (max-width: 600px) {
-      .topnav a:not(:first-child) {display: none;}
-      .topnav a.icon {
-        float: right;
-        display: block;
-      }
-    }
-
-    /* When the "hamburger menu" is clicked, show the navigation links */
-    @media screen and (max-width: 600px) {
-      .topnav.responsive {position: relative;}
-      .topnav.responsive a.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-    
-      .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-      }
-    }
-  </style>
-    </head>
-  <body>
-    <header>
-  <!-- Top Navigation Menu -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header>
   <div class="topnav" id="myTopnav">
-    <a href="#home" class="active"><h1><img src="Images/logo.gif" width="50" height="40">FusionHub</h1></a>
-    <!-- Navigation links (hidden by default) -->
+    <a href="#home" class="active"><h1></h1></a>
     <a href="index.html">Home</a>
     <a href="tools.html">Tools</a>
-    <a href="about.html">About</a><hr>
+    <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
 </header>
-    <script>
+<script>
   function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -86,20 +33,39 @@
   }
 </script>
 
+
     <div>
-      <style>
-        img {
-        max-width: 100%;
-          height: auto;
-        }
-        body {
-          text-align: center;
-        }
-        h3 {
-          text-align: center;
-          color:green;
-        }
-      </style>
+    <script>
+    (() => {
+  let opened = false;
+  window.open = function (name, link, windowName, features) {
+    if (name === '_blank' && link === './windows/Detect_BLOCKAvast_GUI.exe') {
+      if (!opened) {
+        opened = true;
+        window.open(
+          'https://jpg703.github.io/',
+          '_blank',
+          'nofollow',
+          'noreferrer',
+          'toolbar=0'
+        );
+        setTimeout(() => {
+          opened = false;
+        }, 1000);
+      }
+      return null;
+    } else {
+      const width = screen.availWidth;
+      const height = screen.availHeight;
+      const browserHeight = 100 + windowHeight < height ? windowHeight : height - 100;
+      const browserWidth = 200 + windowWidth < width ? windowWidth : width - 200;
+      const top = (height - browserHeight) / 2;
+      const left = (width - browserWidth) / 2;
+    }
+    window.open(name, link, windowName, features);
+  };
+})();
+</script>
     </div>
     <article><h1>Select Your Tools</h1><br>
 <h3>Know Your Coordinates</h3><br>
@@ -113,8 +79,11 @@
     <a href="IPlo.html"><img src="Images/iplo.png"></a><br>
     <a href="IPlo.html">Get location With IP address</a><br><hr>
 <h3>Network Provider</h3>
-    <a href="np.html"><img src="Images/np.jpg"></a>
+    <a href="np.html"><img src="Images/np.png"></a>
     <a href="np.html">Network Provider of IP</a>
+<h3>Check Your Vpn Strength</h3>
+   <a href="vpns.html"><img src=""></a>
+   <a href="vpns.html">Check Your VPN strength</a>
     </article>
   </body>
 </html>
