@@ -1,18 +1,7 @@
-body{
-  -webkit-tap-highlight-color: red;
--webkit-tap-highlight-color: transparent; /* for removing the highlight */
 
-/* Global values */
--webkit-tap-highlight-color: #8CD16A;
--webkit-tap-highlight-color: #6A95D1;
--webkit-tap-highlight-color: #D6C949;
--webkit-tap-highlight-color: revert-layer;
--webkit-tap-highlight-color: unset;
-
-}
 body {
     font-family: Arial, sans-serif;
-    background: #ffff;
+    background: #FFFFFF;
     color: #333;
 }
 
@@ -138,4 +127,17 @@ p {
 
 .closebtn:hover {
   color: black;
+}
+
+
+.footer {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #000;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.footer:a {
+  color:#ffff;
 }
