@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+</head>
+<body>
+    <div id="feedbackDisplay"></div>
+
+    <script>
+        function submitFeedback() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const feedback = document.getElementById("feedback").value;
+
+            const feedbackDisplay = document.getElementById("feedbackDisplay");
+            feedbackDisplay.innerHTML = `
+                <h2>Feedback Received</h2>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Feedback:</strong> ${feedback}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
