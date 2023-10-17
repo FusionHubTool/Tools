@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Feedback Received</h1>
-    
+    <script>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
@@ -15,7 +15,9 @@
         // You can save the feedback data to a database or file here if needed.
         // For this example, we'll just display it on the next page.
     ?>
+        </script>
 
+    <script>
     <p><strong>Name:</strong> <?php echo $name; ?></p>
     <p><strong>Email:</strong> <?php echo $email; ?></p>
     <p><strong>Feedback:</strong> <?php echo $feedback; ?></p>
@@ -25,7 +27,7 @@
         echo "Invalid Request";
     }
     ?>
-
+            </script>
     <a href="index.html">Go back to the feedback form</a>
 </body>
 </html>
