@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Feedback Form</title>
+    <title>Feedback Details</title>
 </head>
 <body>
-    <div id="feedbackDisplay"></div>
+    <h1>Feedback Details</h1>
+    
+    <div id="feedbackDisplay">
+        <!-- Feedback details will be displayed here -->
+    </div>
 
     <script>
-        function submitFeedback() {
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const feedback = document.getElementById("feedback").value;
+        // Sample feedback data (you can replace this with your data source)
+        const feedbackData = [
+            {
+                name: "John Doe",
+                email: "john@example.com",
+                feedback: "This is great!"
+            },
+            {
+                name: "Alice Smith",
+                email: "alice@example.com",
+                feedback: "I have some suggestions."
+            }
+        ];
 
-            const feedbackDisplay = document.getElementById("feedbackDisplay");
-            feedbackDisplay.innerHTML = `
-                <h2>Feedback Received</h2>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Feedback:</strong> ${feedback}</p>
+        const feedbackDisplay = document.getElementById("feedbackDisplay");
+
+        // Loop through the feedback data and display it
+        feedbackData.forEach((feedback, index) => {
+            feedbackDisplay.innerHTML += `
+                <h2>Feedback #${index + 1}</h2>
+                <p><strong>Name:</strong> ${feedback.name}</p>
+                <p><strong>Email:</strong> ${feedback.email}</p>
+                <p><strong>Feedback:</strong> ${feedback.feedback}</p>
+                <hr>
             `;
-        }
+        });
     </script>
 </body>
 </html>
