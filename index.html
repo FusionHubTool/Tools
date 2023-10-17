@@ -102,7 +102,21 @@ exit;
         
         <button type="button" onclick="submitFeedback()">Submit Feedback</button>
     </form>
-    
+    <div id="feedbackDisplay"></div>
+
+    <script>
+        function submitFeedback() {
+            const name = document.getElementById("name").value;
+            const feedback = document.getElementById("feedback").value;
+
+            const feedbackDisplay = document.getElementById("feedbackDisplay");
+            feedbackDisplay.innerHTML = `
+                <h2>Feedback Received</h2>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Feedback:</strong> ${feedback}</p>
+            `;
+        }
+    </script><hr>
     <marquee direction="left" scrollamount="5">This Website Is Under Development. So If there is any issue please inform us. </marquee><hr>
       
     <footer class="footer">
