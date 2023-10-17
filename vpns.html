@@ -90,5 +90,37 @@
             `;
         }, 2000); // Simulated delay, replace with actual VPN strength check time
     </script>
+    <script>import speedtest
+
+def check_vpn_strength():
+    # Create a Speedtest client
+    st = speedtest.Speedtest()
+    
+    # Get the best server
+    st.get_best_server()
+    
+    # Measure ping (latency), download speed, and upload speed
+    ping = st.results.ping
+    download_speed = st.download() / 1_000_000  # Convert to Mbps
+    upload_speed = st.upload() / 1_000_000  # Convert to Mbps
+    
+    print(f"Ping: {ping} ms")
+    print(f"Download Speed: {download_speed} Mbps")
+    print(f"Upload Speed: {upload_speed} Mbps")
+    
+    # Define strength criteria (you can adjust these values)
+    ping_threshold = 50  # Example threshold for ping in ms
+    download_threshold = 10  # Example threshold for download speed in Mbps
+    upload_threshold = 2  # Example threshold for upload speed in Mbps
+    
+    # Check if the VPN strength meets the criteria
+    if ping <= ping_threshold and download_speed >= download_threshold and upload_speed >= upload_threshold:
+        print("VPN strength is good.")
+    else:
+        print("VPN strength is weak.")
+
+if __name__ == "__main__":
+    check_vpn_strength()
+        </script>
 </body>
 </html>
