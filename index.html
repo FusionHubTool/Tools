@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
   <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<script>
 <?php
 $cache_time = 60*60*24*30;
 $etag = md5_file($filename);
@@ -22,7 +22,21 @@ if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) == filemtime($filename) ||
 }
 readfile($filename);
 exit;
-?>
+?></script>
+
+    
+    <script><?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"];
+    $feedback = $_POST["feedback"];
+
+    $file = 'feedback.txt';
+
+    $data = "Name: $name\nFeedback: $feedback\n\n";
+
+    file_put_contents($file, $data, FILE_APPEND | LOCK_EX);
+}
+?></script>
 
 </head>
 <body>
@@ -92,6 +106,37 @@ exit;
     
     
     <marquee direction="left" scrollamount="5">This Website Is Under Development. So If there is any issue please inform us. </marquee><hr>
+  
+   <div class="form-container">
+        <form action="submit_feedback.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name" required>
+            <br>
+            <label for="feedback">Feedback:</label>
+            <textarea name="feedback" rows="4" required></textarea>
+            <br>
+           <label for="feedback">Feedback:</label>
+            <textarea name="feedback" rows="4" required></textarea>
+            <br>
+            <input type="submit" value="Submit Feedback">
+        </form>
+    </div>
+
+    <h2>Feedbacks:</h2>
+    <div class="feedbacks-container">
+    <script><?php
+$feedbacks = file_get_contents('feedback.txt');
+$feedbacks = explode("\n\n", $feedbacks);
+
+foreach ($feedbacks as $feedback) {
+    echo '<div class="feedback-container"><p>' . nl2br($feedback) . '</p></div>';
+}
+?>
+  </script>
+
+
+
+      
     <footer class="footer">
   <div class="footer-input">
     <ul>
