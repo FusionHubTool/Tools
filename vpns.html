@@ -1,112 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>VPN Strength Detector</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <style>
-    body {
-      font-family: sans-serif;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    .vpn-strength {
-      font-size: 24px;
-      margin: 10px 0;
-    }
-
-    .vpn-strength-weak {
-      color: red;
-    }
-
-    .vpn-strength-medium {
-      color: orange;
-    }
-
-    .vpn-strength-strong {
-      color: green;
-    }
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-      <link rel="stylesheet" href="style.css">
+    <title>VPN Strength Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #loading-bar {
+            width: 0;
+            height: 30px;
+            background-color: #007bff;
+            transition: width 0.5s;
+        }
+    </style>
 </head>
 <body>
-  <header>
-  <div class="topnav" id="myTopnav">
-    <a href="#home" class="active"><h1></h1></a>
-    <a href="index.html">Home</a>
-    <a href="tools.html">Tools</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-</header><br>
-<script>
+    <h1>VPN Strength Checker</h1>
+    <p>Checking your VPN connection...</p>
+    <div id="loading-bar"></div>
+    <div id="result"></div>
 
-  function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
-</script>
-  <h1>VPN Strength Detector</h1>
+    <script>
+        // Simulate VPN strength check (you would replace this with an actual check)
+        function checkVPNStrength() {
+            return Math.random() * 100;
+        }
 
-  <div class="vpn-strength">
-    <p>Your VPN strength is:</p>
-    <span id="vpn-strength-text"></span>
-  </div>
+        // Update the loading bar
+        function updateLoadingBar() {
+            const loadingBar = document.getElementById("loading-bar");
+            let width = 0;
+            const interval = setInterval(function() {
+                if (width >= 100) {
+                    clearInterval(interval);
+                } else {
+                    width++;
+                    loadingBar.style.width = width + "%";
+                }
+            }, 50);
+        }
 
-  <script>
-    // Get the user's VPN connection information.
-    const vpnConnection = navigator.connection;
+        // Check VPN strength and display the result
+        setTimeout(function() {
+            updateLoadingBar();
+            const vpnStrength = checkVPNStrength();
 
-    // Check if the user is connected to a VPN.
-    if (vpnConnection.effectiveType === "3gpp" || vpnConnection.effectiveType === "4g" || vpnConnection.effectiveType === "5g") {
-      // The user is connected to a mobile network, which is not a VPN.
-      document.getElementById("vpn-strength-text").innerHTML = "Not connected to a VPN.";
-    } else {
-      // The user is connected to a VPN.
+            // Categorize into surface web and dark web
+            let category = "Surface Web";
+            if (vpnStrength < 50) {
+                category = "Dark Web";
+            }
 
-      // Get the VPN's IP address.
-      const vpnIpAddress = vpnConnection.ipAddress;
-
-      // Use a VPN strength testing service to test the VPN's strength.
-      const vpnStrengthTestingServiceUrl = "https://example.com/vpn-strength-test/";
-
-      // Make an asynchronous request to the VPN strength testing service.
-      fetch(vpnStrengthTestingServiceUrl + vpnIpAddress)
-        .then(response => response.json())
-        .then(data => {
-          // Get the VPN's strength from the response data.
-          const vpnStrength = data.vpnStrength;
-
-          // Update the VPN strength text on the page.
-          document.getElementById("vpn-strength-text").innerHTML = vpnStrength;
-
-          // Add a CSS class to the VPN strength text element based on the VPN's strength.
-          document.getElementById("vpn-strength-text").classList.add(`vpn-strength-${vpnStrength}`);
-        });
-    }
-  </script>
-      <footer class="footer">
-  <div class="footer-input">
-    <ul>
-    <li><a href="about.html">About Us</a></li><br>
-    <li><a href="Privacy.html">Privacy Policies</a></li>
-    </ul>
-    <a href="https://instagram.com/fusionhubtools" target="_blank"><img class="logo" src="Images/Instagram.png" alt="Instagram Logo" width="40" height="40"/></a>
-    <a href="https://twitter.com/fusionhub_ind" target="_blank"><img class="logo" src="Images/Twitter.png" alt="Twitter Logo" width="20" height="20"/></a>
-  </div>
-</footer>
-
+            const resultElement = document.getElementById("result");
+            resultElement.innerHTML = `
+                <h2>VPN Strength: ${vpnStrength.toFixed(2)}%</h2>
+                <p>You are on the ${category}.</p>
+            `;
+        }, 2000); // Simulated delay, replace with actual VPN strength check time
+    </script>
 </body>
 </html>
