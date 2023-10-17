@@ -1,28 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VPN Strength Checker</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        #loading-bar {
-            width: 0;
-            height: 30px;
-            background-color: #007bff;
-            transition: width 0.5s;
-        }
-    </style>
-    <link rel="stylesheet" href="style.css">
+  <title>VPN Strength Detector</title>
+  <style>
+    .progress-bar {
+      width: 300px;
+      height: 30px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      margin: 20px;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 5px;
+      background-color: #4caf50;
+      width: 0;
+      transition: width 0.25s;
+    }
+    .category {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
+    }
+    .rating {
+      font-size: 24px;
+      margin: 20px;
+    }
+  </style>
+  
+  
+     <div> <link rel="stylesheet" href="style.css">
   <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</div>
 
 
+
+  <script>
+    function detectStrength() {
+      var surfaceWeb = 80; // Replace with actual value
+      var darkWeb = 20; // Replace with actual value
+      var webRTCLeak = true; // Replace with actual value
+      var dnsLeak = true; // Replace with actual value
+      var ipLeak = true; // Replace with actual value
+      var surfaceWebProgress = document.getElementById('surface-web-progress');
+      var darkWebProgress = document.getElementById('dark-web-progress');
+      var webRTCLeakStatus = document.getElementById('web-rtc-leak-status');
+      var dnsLeakStatus = document.getElementById('dns-leak-status');
+      var ipLeakStatus = document.getElementById('ip-leak-status');
+      surfaceWebProgress.style.width = surfaceWeb + '%';
+      darkWebProgress.style.width = darkWeb + '%';
+      if (webRTCLeak) {
+        webRTCLeakStatus.textContent = 'No WebRTC Leak';
+      } else {
+        webRTCLeakStatus.textContent = 'WebRTC Leak Detected';
+      }
+      if (dnsLeak) {
+        dnsLeakStatus.textContent = 'No DNS Leak';
+      } else {
+        dnsLeakStatus.textContent = 'DNS Leak Detected';
+      }
+      if (ipLeak) {
+        ipLeakStatus.textContent = 'No IP Leak';
+      } else {
+        ipLeakStatus.textContent = 'IP Leak Detected';
+      }
+      if (surfaceWeb >= 80 && darkWeb >= 80 && !webRTCLeak && !dnsLeak && !ipLeak) {
+        document.getElementById('rating').textContent = 'Strong VPN';
+      } else if (surfaceWeb >= 60 && darkWeb >= 60 && !webRTCLeak && !dnsLeak && !ipLeak) {
+        document.getElementById('rating').textContent = 'Medium VPN';
+      } else {
+        document.getElementById('rating').textContent = 'Weak VPN';
+      }
+    }
+  </script>
+  
 </head>
-<body>
-    <header>
+
+
+<body onload="detectStrength()">
+  
+    <strong><header>
   <div class="topnav" id="myTopnav">
     <a href="#home" class="active"><h1></h1></a>
     <a href="index.html">Home</a>
@@ -46,81 +104,146 @@
     }
   }
 </script>
+<br>
+  
+      <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <strong>Warning!</strong><br> This Tool Will Check Your I.P Leaks, D.N.S leaks, WebRtc Leaks and etc. To show How strong is your network. It works Without V.P.N because it check leaks that V.P.Ns usually use to protect. And Any Wrong Result is not responsible by us. Ise at Your Own Risk.Thanku!
+</div>
 
-    <h1>VPN Strength Checker</h1>
-    <p>Checking your VPN connection...</p>
-    <div id="loading-bar"></div>
-    <div id="result"></div>
+<script>function showAlert() {
+  document.querySelector(".alert").style.display = "block";
+}
+</script>
 
-    <script>
-        // Simulate VPN strength check (you would replace this with an actual check)
-        function checkVPNStrength() {
-            return Math.random() * 100;
+
+  <script>
+  function checkIPLeak() {
+  fetch('https://api.myip.com')
+    .then(response => response.json())
+    .then(data => {
+      if (data.ip !== 'your.vpn.ip.address') {
+        console.log('IP Leak Detected');
+      } else {
+        console.log('No IP Leak');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+</script>
+
+
+<script>
+  const dnsPacket = require('dns-packet');
+const dns = require('dns.js');
+
+const dnsQuery = dnsPacket.encode({
+  type: 'query',
+  id: 1,
+  flags: dnsPacket.RECURSION_DESIRED,
+  questions: [{
+    type: 'A',
+    class: 'IN',
+    name: 'example.com'
+  }]
+});
+
+const dnsServer = '8.8.8.8';
+const dnsPort = 53;
+
+const socket = dgram.createSocket('udp4');
+socket.send(dnsQuery, 0, dnsQuery.length, dnsPort, dnsServer);
+
+socket.on('message', (message) => {
+  const response = dnsPacket.decode(message);
+  console.log(response.answers);
+});
+</script>
+
+<script>
+  function checkWebRTCLocalIP() {
+  var pc = new RTCPeerConnection(null);
+  pc.createDataChannel(''); // create a dummy data channel
+  pc.createOffer(pc.setLocalDescription.bind(pc), function() {}); // create offer and set local description
+  pc.onicecandidate = function(ice) { // listen for candidate events
+    if (!ice || !ice.candidate || !ice.candidate.candidate || !ice.candidate.candidate.match(/a=candidate.*\r\n/)) return;
+    var ip = ice.candidate.candidate.match(/a=candidate:.* /)[0].split(' ')[1];
+    console.log('WebRTC Local IP:', ip);
+  };
+}
+</script>
+
+
+<script>
+function checkVulnerabilities() {
+  var vulnerabilities = [
+    'https://example.com', // Replace with actual URLs to check
+    'https://example.com'
+  ];
+  var results = [];
+  var promises = vulnerabilities.map(function(url) {
+    return fetch(url)
+      .then(function(response) {
+        if (response.status === 200) {
+          results.push('Vulnerable');
+        } else {
+          results.push('Not Vulnerable');
         }
+      })
+      .catch(function() {
+        results.push('Not Vulnerable');
+      });
+  });
+  Promise.all(promises).then(function() {
+    console.log(results);
+  });
+}
+</script>
 
-        // Update the loading bar
-        function updateLoadingBar() {
-            const loadingBar = document.getElementById("loading-bar");
-            let width = 0;
-            const interval = setInterval(function() {
-                if (width >= 100) {
-                    clearInterval(interval);
-                } else {
-                    width++;
-                    loadingBar.style.width = width + "%";
-                }
-            }, 50);
-        }
 
-        // Check VPN strength and display the result
-        setTimeout(function() {
-            updateLoadingBar();
-            const vpnStrength = checkVPNStrength();
+  <h1>VPN Strength Detector</h1>
+  <div class="progress-bar">
+    <div id="surface-web-progress" class="progress-bar-fill"></div>
+  </div>
+  <div class="progress-bar">
+    <div id="dark-web-progress" class="progress-bar-fill"></div>
+  </div>
+  <div class="category">
+    <span>Surface Web</span>
+    <span id="surface-web-strength"></span>
+  </div>
+  <div class="category">
+    <span>Dark Web</span>
+    <span id="dark-web-strength"></span>
+  </div>
+  <div class="category">
+    <span>WebRTC Leak</span>
+    <span id="web-rtc-leak-status"></span>
+  </div>
+  <div class="category">
+    <span>DNS Leak</span>
+    <span id="dns-leak-status"></span>
+  </div>
+  <div class="category">
+    <span>IP Leak</span>
+    <span id="ip-leak-status"></span>
+  </div>
+  <div class="rating">
+    <span id="rating"></span>
+  </div>
+  
+      <footer class="footer">
+  <div class="footer-input">
+    <ul>
+    <li><a href="about.html">About Us</a></li><br>
+    <li><a href="Privacy.html">Privacy Policy</a></li>
+    </ul>
+    <a href="https://instagram.com/fusionhubtools" target="_blank"><img class="logo" src="Images/Instagram.png" alt="Instagram Logo" width="40" height="40"/></a>
+    <a href="https://twitter.com/fusionhub_ind" target="_blank"><img class="logo" src="Images/Twitter.png" alt="Twitter Logo" width="20" height="20"/></a>
+  </div>
+</footer>
 
-            // Categorize into surface web and dark web
-            let category = "Surface Web";
-            if (vpnStrength < 50) {
-                category = "Dark Web";
-            }
-
-            const resultElement = document.getElementById("result");
-            resultElement.innerHTML = `
-                <h2>VPN Strength: ${vpnStrength.toFixed(2)}%</h2>
-                <p>You are on the ${category}.</p>
-            `;
-        }, 2000); // Simulated delay, replace with actual VPN strength check time
-    </script>
-    <script>import speedtest
-
-def check_vpn_strength():
-    # Create a Speedtest client
-    st = speedtest.Speedtest()
-    
-    # Get the best server
-    st.get_best_server()
-    
-    # Measure ping (latency), download speed, and upload speed
-    ping = st.results.ping
-    download_speed = st.download() / 1_000_000  # Convert to Mbps
-    upload_speed = st.upload() / 1_000_000  # Convert to Mbps
-    
-    print(f"Ping: {ping} ms")
-    print(f"Download Speed: {download_speed} Mbps")
-    print(f"Upload Speed: {upload_speed} Mbps")
-    
-    # Define strength criteria (you can adjust these values)
-    ping_threshold = 50  # Example threshold for ping in ms
-    download_threshold = 10  # Example threshold for download speed in Mbps
-    upload_threshold = 2  # Example threshold for upload speed in Mbps
-    
-    # Check if the VPN strength meets the criteria
-    if ping <= ping_threshold and download_speed >= download_threshold and upload_speed >= upload_threshold:
-        print("VPN strength is good.")
-    else:
-        print("VPN strength is weak.")
-
-if __name__ == "__main__":
-    check_vpn_strength()
-        </script>
 </body>
 </html>
