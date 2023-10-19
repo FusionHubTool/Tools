@@ -16,31 +16,15 @@
     <link rel="stylesheet" href="style.css">
   <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script>
-<?php
-$cache_time = 60*60*24*30;
-$etag = md5_file($filename);
-header('Cache-Control: public');
-header('Expires: ' . gmdate('D, d M Y H:i:s', time()+$cache_time) . ' GMT');
-header('ETag: '.$etag);
-header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime($filename)) . ' GMT');
-if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) == filemtime($filename) ||
-    trim($_SERVER['HTTP_IF_NONE_MATCH']) == $etag) {
-    header("HTTP/1.1 304 Not Modified");
-    exit;
-}
-readfile($filename);
-exit;
-?></script>
 
 </head>
 <body>
   <strong><header>
   <div class="topnav" id="myTopnav">
-    <a href="#home" class="active"><h1></h1></a>
+    <a href="#home" class="active"></a>
     <a href="index.html">Home</a>
-    <a href="tools.html">Tools</a>
     <a href="about.html">About</a>
+    <a href="Privacy.html">Privacy Policy</a>
     <a href="contact.html">Contact</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
