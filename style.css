@@ -1,9 +1,29 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: rgba(255, 255, 255, 1);
+    background: black;
     color: #333;
+    text-align: center;
 }
+
+
+article {
+  background-color: #e9f5ed;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+article h1 {
+  color: #007bff;
+}
+article a {
+  text-decoration: underline;
+  color: #007bff;
+}
+
 
 .container {
     max-width: 960px;
@@ -15,13 +35,19 @@ body {
 
 h1 {
     font-size: 36px;
-    color: #333;
+    color: green;
     margin-bottom: 10px;
 }
 
 p {
     margin-bottom: 10px;
 }
+
+
+i iframe{
+  background: whitesmoke;
+}
+
 
 .btn {
     display: inline-block;
@@ -98,10 +124,7 @@ p {
     img {
         max-width: 100%;
           height: auto;
-        }
-    body {
-          text-align: center;
-        }
+    }
     h3 {
           text-align: center;
           color:green;

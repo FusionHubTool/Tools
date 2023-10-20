@@ -21,10 +21,10 @@
      <strong><header>
   <div class="topnav" id="myTopnav">
     <a href="#home" class="active"></a>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="Privacy.html">Privacy Policy</a>
-    <a href="contact.html">Contact</a>
+    <a href="/index.html">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/Privacy.html">Privacy Policy</a>
+    <a href="/contact.html">Contact</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -43,6 +43,7 @@
 
     <h1>IP Address to Full Address</h1>
     
+    <article>
     <form id="ipForm">
         <label for="ipInput">Enter IP Address:</label>
         <input type="text" id="ipInput" name="ipAddress" placeholder="Enter an IP address"><br>
@@ -50,7 +51,7 @@
     </form>
     
     <p>Full Address: <span id="fullAddress"></span></p>
-
+    </article>
     <script>
         document.getElementById('ipForm').addEventListener('submit', function(event) {
             event.preventDefault();
