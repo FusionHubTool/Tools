@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Security Header Checker</title>
+  <script>
+    function checkHeaders() {
+      var url = document.getElementById('url').value;
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          var headers = xhr.getAllResponseHeaders();
+          var securityHeaders = [
+            'Content-Security-Policy',
+            'Strict-Transport-Security',
+            'X-Content-Type-Options',
+            'X-Frame-Options',
+            'X-XSS-Protection',
+            'Referrer-Policy',
+            'Feature-Policy',
+            'Permissions-Policy'
+          ];
+          var results = {};
+          securityHeaders.forEach(function(header) {
+            results[header] = headers.includes(header) ? 'Present' : 'Not Present';
+          });
+          document.getElementById('results').innerHTML = JSON.stringify(results, null, 2);
+        }
+      };
+      xhr.send();
+    }
+  </script>
+</head>
+<body>
+  <h1>Security Header Checker</h1>
+  <form onsubmit="checkHeaders(); return false;">
+    <input type="text" id="url" placeholder="Enter URL">
+    <button type="submit">Check Security Headers</button>
+  </form>
+  <pre id="results"></pre>
+</body>
+</html>
