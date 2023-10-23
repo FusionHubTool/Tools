@@ -10,7 +10,11 @@
 
   gtag('config', 'G-78MDV74DXC');
 </script>
-
+<script>
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+</script>
 
     <meta charset=""UTF-8>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
