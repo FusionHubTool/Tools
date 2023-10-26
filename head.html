@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
       <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-78MDV74DXC"></script>
@@ -19,38 +19,61 @@
       <link rel="stylesheet" href="style.css">
   <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<script> 
+async function checkHeaders() { const url = document.getElementById('url').value; try { const response = await fetch(url, { method: 'HEAD' }); const headers = response.headers; let output = `<table border="1"><tr><th>Header</th><th>Value</th></tr>`; for (let pair of headers.entries()) { output += `<tr><td>${pair[0]}</td><td>${pair[1]}</td></tr>`; } output += '</table>'; document.getElementById('output').innerHTML = output; } catch (error) { document.getElementById('output').innerHTML = `Error: ${error.message}`; } } </script>   
 </head>
 <body>
     <strong><header>
   <div class="topnav" id="myTopnav">
     <a href="#home" class="active"></a>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="Privacy.html">Privacy Policy</a>
-    <a href="contact.html">Contact</a>
+    <a href="https://fusionhubtool.github.io/index.html">Home</a>
+    <a href="https://fusionhubtool.github.io/about.html">About</a>
+    <a href="https://fusionhubtool.github.io/Privacy.html">Privacy Policy</a>
+    <a href="https://fusionhubtool.github.io/contact.html">Contact</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
 </header></strong><br>
-    <div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-  <strong>Welcome</strong><br>🚀 Get ready to level up your website! Introducing the brand new 'Website HTTP Header Checker' tool on FusionHub. Check your headers like a pro and optimize your website for peak performance. Coming soon, so stay tuned! 🎉 
-</div>
+<script>
 
-<script>function showAlert() {
-  document.querySelector(".alert").style.display = "block";
-}
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
 </script>
-<h1>Coming Soon!</h1><br>
-<h3>Subscribe To Get Informed</h3><br><hr>
-<iframe width="540" height="600" src="https://449c948a.sibforms.com/serve/MUIFAKXx4J1bNfG3_jxILhfi86RK7eggRVclacTaHApFHJF6kujfvl7NsO6vOzVo_IBC82gUrzwyzwLVlLeZG5AmDvUgpkSltslQIW2PFn0T5EiBROFPCI7lF2CXypK2LUyWXCVR5a5O3L3un7RYG089lLNzr01VDqsZfjHBKdLqJDxBQtuJSvvV2koW9lpS7VMRmYAgwHJDULE8" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe><br>
-<hr>
-    <footer class="footer">
+
+  <h1>HTTP Header Checker</h1>
+<article><label for="url">Enter the URL to check:</label>
+<input type="text" id="url" name="url"> 
+<br>
+<button onclick="checkHeaders()">Check Headers</button><br> 
+<div id="output"></div>
+</article><br>
+
+  <article>
+  <h1>About</h1>The HTTP Header Checker is a simple yet powerful tool that allows you to quickly retrieve the HTTP headers of any URL. This tool is part of the FusionHubTool collection, a comprehensive set of network testing and troubleshooting tools.<br><br>
+
+HTTP headers are a crucial part of the HTTP protocol, providing additional information about the request or the response. They can contain a wide variety of information, from the server's software version to the type of data being returned by the server.<br><br>
+
+With the HTTP Header Checker, you can gain valuable insights into how a website is configured and what security measures are in place. For example, the 'Server' header can reveal the type and version of the server software, which can be useful for identifying potential vulnerabilities. The 'Content-Type' header can tell you what type of data the server is returning, and the 'Content-Length' header can give you an idea of the size of the response.<br><br>
+
+To use the tool, simply enter the URL of the website you're interested in and click 'Check Headers'. The tool will then send a HEAD request to the URL and display the headers in a user-friendly format.<br><br>
+
+Remember, while this tool can provide valuable information, it should be used responsibly and ethically. It's not meant for malicious purposes, but rather for understanding and improving the security of your own network.</article><br><hr>
+  
+  
+      <footer class="footer">
   <div class="footer-input">
     <ul>
-    <li><a href="about.html">About Us</a></li><br>
-    <li><a href="Privacy.html">Privacy Policy</a></li>
+    <li><a href="https://fusionhubtool.github.io/about.html">About Us</a></li><br>
+    <li><a href="https://fusionhubtool.github.io/Privacy.html">Privacy Policy</a></li>
     </ul>
     <a href="https://instagram.com/fusionhubtools" target="_blank"><img class="logo" src="Images/Instagram.png" alt="Instagram Logo" width="40" height="40"/></a>
     <a href="https://twitter.com/fusionhub_ind" target="_blank"><img class="logo" src="Images/Twitter.png" alt="Twitter Logo" width="20" height="20"/></a>
