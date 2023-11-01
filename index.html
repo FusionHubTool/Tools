@@ -19,6 +19,24 @@
 
 </head>
 <body>
+  <div id="loader">
+  <img src="loading.gif">
+</div>
+<style>
+#loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+}
+</style>
+<script>
+window.onload = function() {
+  document.getElementById('loader').style.display = 'none';
+};
+</script>
   <strong><header>
   <div class="topnav" id="myTopnav">
     <a href="#home" class="active"></a>
