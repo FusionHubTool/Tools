@@ -19,17 +19,18 @@
 
 </head>
 <body>
-  <div id="loader">
-  <img src="Images/loading.gif">
+    <div id="loader">
+  <img src="Images/loading.gif">LOADING...........
 </div>
 <style>
 #loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
+  position: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
 }
 </style>
 <script>
@@ -37,6 +38,8 @@ window.onload = function() {
   document.getElementById('loader').style.display = 'none';
 };
 </script>
+
+
   <strong><header>
   <div class="topnav" id="myTopnav">
     <a href="#home" class="active"></a>
