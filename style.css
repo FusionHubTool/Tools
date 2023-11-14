@@ -93,6 +93,13 @@ i iframe{
     margin: 20px auto;
 }
 
+
+header{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
   /* Style for the navigation menu */
   .topnav {
     overflow: hidden;
