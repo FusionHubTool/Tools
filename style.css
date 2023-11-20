@@ -99,12 +99,14 @@ header{
     top: 0px;
     left: 0px;
     width: 100%;
+    background-image: url(Images/bgvideo.gif)
+    background-size: cover;
+    height: 65px;
 }
   /* Style for the navigation menu */
   .topnav {
     overflow: hidden;
-    background-image: url(Images/bgvideo.gif);
-    background-size: cover;
+    background-color: #000;
   }
 
   .topnav a {
