@@ -106,7 +106,6 @@ header{
   /* Style for the navigation menu */
   .topnav {
     overflow: hidden;
-    background-color: #000;
   }
 
   .topnav a {
@@ -116,6 +115,7 @@ header{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    background-color: #000;
   }
 
   .topnav a:hover {
