@@ -6,6 +6,15 @@ body {
     text-align: center;
 }
 
+.gradientheading{
+            background: linear-gradient(45deg, #59BC81, #f80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 32px;
+            padding-top: 50px;
+        }
+        
+        
 .button {
  background-color: #4CAF50; /* Green */
  border: none;
@@ -38,6 +47,7 @@ article {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
   color: #333;
+  text-wrap: wrap;
 }
 
 article h1 {
@@ -65,11 +75,6 @@ h1 {
 
 p {
     margin-bottom: 10px;
-}
-
-
-i iframe{
-  background: whitesmoke;
 }
 
 
@@ -418,6 +423,7 @@ footer {
     list-style-type: none;
 }
 
+
 /*? mobile */
 
 @media (max-width: 800px) {
@@ -437,7 +443,6 @@ footer {
         margin: 0 auto;
     }
 }
-
 
 
 

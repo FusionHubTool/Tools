@@ -24,13 +24,22 @@
             rel="stylesheet"
         >
 </head>
-<body>
-  <div id="loader"></div>
+<body onload="showLoader();">
+    <div id="fullscreen-div">This div will be displayed in fullscreen.</div>
+    <div id="loader">Loading...</div>
+ 
   <script>
-window.onload = function() {
-  document.getElementById('loader').style.display = 'none';
-};
-</script>
+    function showLoader() {
+    var loader = document.getElementById("loader");
+
+    loader.style.display = "block";
+
+    setTimeout(function() {
+        loader.style.display = "none";
+    }, 1000);
+}
+  </script>
+  
   
   <header>
   <div class="topnav" id="myTopnav">
@@ -74,7 +83,7 @@ window.onload = function() {
 </script>
 
 
-   <h1>Select Your Tools</h1><br>
+   <h1 class="gradientheading">Select Your Tools</h1><br>
  <article>
 <h2>Know Your Coordinates</h2><br>
    <a href="https://fusionhubtool.github.io/Tools/location.html"> <img src="Images/geo.png"></a><br>
@@ -141,11 +150,11 @@ window.addEventListener('resize', () => {
         <h3>Product</h3>
     <ul>
    <li>
-    <a href="#" title="Pricing">Pricing</a></li>
+    <a href="https://fusionhubtool.github.io/Tools/" title="Pricing">Pricing</a></li>
    <li>
-    <a href="#" title="Documentation">Documentation</a></li>
+    <a href="https://fusionhubtool.github.io/Tools/" title="Documentation">Documentation</a></li>
    <li>
-    <a href="#" title="Status">Status</a></li>
+    <a href="https://fusionhubtool.github.io/Tools/error.html" title="Status">Status</a></li>
           </ul>
             </section>
     <section>
@@ -154,18 +163,16 @@ window.addEventListener('resize', () => {
     <li>
      <a href="https://fusionhubtool.github.io/Tools/contact.html" title="Support">Support</a> </li>
     <li>
-     <a href="#" title="Help Centre">Help Centre</a></li>
+     <a href="https://fusionhubtool.github.io/Tools/contact" title="Help Centre">Help Centre</a></li>
        </ul>
           </section>
    <section>
       <h3>Company</h3>
         <ul>
            <li>
-             <a href="#" title="About Us">About Us</a></li>
+             <a href="https://fusionhubtool.github.io/Tools/about.html" title="About Us">About Us</a></li>
            <li>
-             <a href="#" title="Blog">Blog</a></li>
-           <li>
-             <a href="#" title="Careers">Careers</a></li>
+             <a href="https://fusionhubtool.github.io/Tools/error.html" title="Blog">Blog</a></li>
            <li>
              <a href="https://fusionhubtool.github.io/Tools/contact.html" title="Contact">Contact</a></li>
              </ul>
@@ -174,13 +181,13 @@ window.addEventListener('resize', () => {
      <h3>Legal</h3>
        <ul>
          <li>
-           <a href="#" title="Terms and services">Terms</a></li>
+           <a href="https://fusionhubtool.github.io/Tools/README.md" title="Terms and services">Terms</a></li>
          <li>
            <a href="https://fusionhubtool.github.io/Tools/Privacy.html" title="Privacy Policy">Privacy</a></li>
          <li>
-           <a href="#" title="Licenses">Licenses</a></li>
+           <a href="https://fusionhubtool.github.io/Tools/error.html" title="Licenses">Licenses</a></li>
          <li>
-           <a href="#" title="Cookies">Contact</a></li>
+           <a href="https://fusionhubtool.github.io/Tools/error.html" title="Cookies">Contact</a></li>
          </ul>
             </section>
                 </div>
