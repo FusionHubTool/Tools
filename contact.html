@@ -1,14 +1,87 @@
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .icon {
+            font-size: 24px;
+            color: #4285f4;
+        }
+
+        .link {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .link:hover {
+            color: #000;
+            border: 2px solid tomato;
+            background-color: #F36666;
+           }
+           
+        .link:active {
+          color#3888CBCC;
+        }
+    </style>
 </head>
-
 <body>
-<h1>Contact Information</h1>
-</body>
+    <div class="container">
+        <div class="header">
+            <h1>Contact Information</h1>
+        </div>
 
+        <div class="contact-info">
+            <div>
+                <i class="icon fab fa-twitter"></i>
+                <a href="https://twitter.com/fusionhub_ind" class="link" target="_blank">@fusionhun_ind</a>
+            </div>
+
+            <div>
+                <i class="icon fab fa-github"></i>
+                <a href="https://github.com/fusionhubtool" class="link" target="_blank">FusionHubTool</a>
+            </div>
+
+            <div>
+                <i class="icon fab fa-instagram"></i>
+                <a href="https://www.instagram.com/username/" class="link" target="_blank">@username</a>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <div>
+                <i class="icon fas fa-envelope"></i>
+                <a href="mailto:email@example.com" class="link">email@example.com</a>
+            </div>
+        </div>
+    </div>
+</body>
 </html>

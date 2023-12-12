@@ -15,30 +15,6 @@ body {
         }
         
         
-.button {
- background-color: #4CAF50; /* Green */
- border: none;
- color: white;
- padding: 15px 32px;
- text-align: center;
- text-decoration: none;
- display: inline-block;
- font-size: 16px;
- margin: 4px 2px;
- cursor: pointer;
-}
-
-/* Style the button when hovered */
-.button:hover {
- background-color: #45a049;
-}
-
-/* Style the button when active */
-.button:active {
- background-color: #3e8e41;
- box-shadow: 0 5px #666;
- transform: translateY(4px);
-}
 
 article {
   background-color: #e9f5ed;
@@ -53,11 +29,16 @@ article {
 article h1 {
   color: #007bff;
 }
-article a {
-  text-decoration: underline;
-  color: #007bff;
+
+article a{
+  text-decoration: none;
 }
 
+article a:hover{
+  padding: 3px;
+  background-color: rgba(214, 79, 79, 0.8);
+  color: black;
+}
 
 .container {
     max-width: 960px;
@@ -447,36 +428,3 @@ footer {
 
 
 
-/* Loader*/
-/* HTML: <div class="loader"></div> */
-#loader {
-  width: 28px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #E3AAD6;
-  transform-origin: top;
-  display: grid;
-  animation: l3-0 1s infinite linear;
-}
-#loader::before,
-#loader::after {
-  content: "";
-  grid-area: 1/1;
-  background:#F4DD51;
-  border-radius: 50%;
-  transform-origin: top;
-  animation: inherit;
-  animation-name: l3-1;
-}
-#loader::after {
-  background: #F10C49;
-  --s:180deg;
-}
-@keyframes l3-0 {
-  0%,20% {transform: rotate(0)}
-  100%   {transform: rotate(360deg)}
-}
-@keyframes l3-1 {
-  50% {transform: rotate(var(--s,90deg))}
-  100% {transform: rotate(0)}
-}
