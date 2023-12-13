@@ -58,3 +58,19 @@ addEventListener("mousemove", (e) => {
     y1 = clientY;
   }
 });
+
+
+
+
+
+function navigateToLink() {
+    window.location.href = "https://instagram.com/fusionhubtools";
+}
+
+function navigateToLink2() {
+    window.location.href = "https://x.com/fusionhub_ind";
+}
+
+function navigateToLink3() {
+    window.location.href = "https://github.com/fusionhubtool";
+}
