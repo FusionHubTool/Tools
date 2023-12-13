@@ -64,7 +64,7 @@ For more details on how we handle user data, please refer to our Privacy Policy.
 
 We value your feedback and are here to assist you. If you encounter any issues, have suggestions for improvements, or need support, please don't hesitate to reach out to us. You can contact us through the following methods:
 
-- **Email:** [Your contact email]
-- **Support Page:** [URL to your support or contact page]
+- **Email:** fussionhub_ind@gmail.com
+- **Support Page:** https://fusionnhubtool.github.io/Tools/contact.html
 
 Thank you for using our website and trusting us with your needs. We hope our tools are helpful in your endeavors. Enjoy your experience!
