@@ -15,10 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IP Lookup</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <link rel="stylesheet" href="style.css">
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
      <header>
@@ -45,41 +44,42 @@
 </script>
 
    <h1>IP Address Lookup</h1>
-<aricle><label for="ip">IP:</label><br>
-<input type="text" id="ip" name="ip" placeholder="Enter IP Address" required><br>
-<button onclick="getLocation()">Get Coordinates</button></aricle>
+   
+   <style>
 
-<article><h3>Location Details:</h3>
-<p id="location"></p>
-
-<h3>Google Maps:</h3>
-<p><button onclick="searchGoogleMaps()">Search on Google Maps</button></p>
-
+   </style>
+   <article>
+<div>
+    <h1>Enter IP Address</h1><br>
+    <input type="text" id="ipAddress" />
+    <button onclick="getIPDetails()" class="button">Get Details</button>
+    <div id="details"></div>
+   </article><br>
 <script>
-function getLocation() {
-    var ip = document.getElementById("ip").value;
-    $.getJSON("https://ipapi.co/" + ip + "/json/", function(data) {
-        document.getElementById("location").innerHTML = "Latitude: " + data.latitude + "<br>Longitude: " + data.longitude + "<br>City: " + data.city + "<br>Region: " + data.region + "<br>Country: " + data.country_name + "<br>Postal Code: " + data.postal;
-    });
-}
-      function searchGoogleMaps() {
-    var ip = document.getElementById("ip").value;
-    $.getJSON("https://ipapi.co/" + ip + "/json/", function(data) {
-        var lat = data.latitude;
-        var long = data.longitude;
-        window.open("https://www.google.com/maps/search/?api=1&query=" + lat + "," + long, "_blank");
-    });
-}
+    function getIPDetails() {
+        var ipAddress = document.getElementById('ipAddress').value;
+        var url = 'https://freeipapi.com/api/json/' + ipAddress;
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            var details = document.getElementById('details');
+            details.innerHTML = '<h2>Details</h2>';
+            for (var key in data) {
+                details.innerHTML += '<p>' + key + ': ' + data[key] + '</p>';
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
 </script>
 </article>
-<hr>
+<br>
   <article>
       <h3>Want Geolocation?</h3>
          <a href="location.html"> <img src="Images/geo.png"></a><br>
     <h3><a href="location.html">Track you Geolocation By this Tool</a></h3><br>
       This Tool Will Fetch Your Coordinate From Your Location. We Provide Most Accurate Coordinates.
-    </article><hr>
-
+    </article><br>
+<br>
    <footer>
      <div class="footer-line"></div>
      <div class="footer-wrapper">

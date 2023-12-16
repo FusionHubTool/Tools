@@ -1,334 +1,46 @@
+
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-      <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-78MDV74DXC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-78MDV74DXC');
-</script>
-  <title>Network</title>
-      <meta charset=""UTF-8>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    .progress-bar {
-      width: 300px;
-      height: 30px;
-      background-color: #f2f2f2;
+    <title>Security Checker</title>
+    <style>
+            .progress-bar {
+      height: 20px;
+      background-color: #f3f3f3;
       border-radius: 5px;
-      margin: 20px;
+      overflow: hidden;
     }
-    .progress-bar-fill {
+    .progress-bar span {
+      display: block;
       height: 100%;
-      border-radius: 5px;
       background-color: #4caf50;
-      width: 0;
-      transition: width 0.25s;
     }
-    .category {
-      display: flex;
-      justify-content: space-between;
-      margin: 20px;
-    }
-    .rating {
-      font-size: 24px;
-      margin: 20px;
-    }
-  </style>
-  
-  
-     <div> <link rel="stylesheet" href="style.css">
-  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</div>
-
-
-
-  <script>
-    function detectStrength() {
-      var surfaceWeb = 100; // Replace with actual value
-      var darkWeb = 40; // Replace with actual value
-      var webRTCLeak = true; // Replace with actual value
-      var dnsLeak = true; // Replace with actual value
-      var ipLeak = true; // Replace with actual value
-      var surfaceWebProgress = document.getElementById('surface-web-progress');
-      var darkWebProgress = document.getElementById('dark-web-progress');
-      var webRTCLeakStatus = document.getElementById('web-rtc-leak-status');
-      var dnsLeakStatus = document.getElementById('dns-leak-status');
-      var ipLeakStatus = document.getElementById('ip-leak-status');
-      surfaceWebProgress.style.width = surfaceWeb + '%';
-      darkWebProgress.style.width = darkWeb + '%';
-      if (webRTCLeak) {
-        webRTCLeakStatus.textContent = 'No WebRTC Leak';
-      } else {
-        webRTCLeakStatus.textContent = 'WebRTC Leak Detected';
-      }
-      if (dnsLeak) {
-        dnsLeakStatus.textContent = 'No DNS Leak';
-      } else {
-        dnsLeakStatus.textContent = 'DNS Leak Detected';
-      }
-      if (ipLeak) {
-        ipLeakStatus.textContent = 'No IP Leak';
-      } else {
-        ipLeakStatus.textContent = 'IP Leak Detected';
-      }
-      if (surfaceWeb >= 80 && darkWeb >= 80 && !webRTCLeak && !dnsLeak && !ipLeak) {
-        document.getElementById('rating').textContent = 'Strong VPN';
-      } else if (surfaceWeb >= 60 && darkWeb >= 60 && !webRTCLeak && !dnsLeak && !ipLeak) {
-        document.getElementById('rating').textContent = 'Medium VPN';
-      } else {
-        document.getElementById('rating').textContent = 'Weak VPN';
-      }
-    }
-  </script>
-  
+    </style>
 </head>
+<body>
+    <h1>Security Checker</h1>
 
-
-<body onload="detectStrength()">
-  
-  <header>
-  <div class="topnav" id="myTopnav">
-    <a href="#home" class="active"></a>
-    <a href="https://fusionhubtool.github.io/index.html">Home</a>
-    <a href="https://fusionhubtool.github.io/about.html">About</a>
-    <a href="https://fusionhubtool.github.io/Privacy.html">Privacy Policy</a>
-    <a href="https://fusionhubtool.github.io/contact.html">Contact</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-</header><br><br><br>
-
-<script>
-
-  function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
-</script>
-<br>
-  
-      <div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-  <strong>Warning!</strong><br> This Tool Will Check Your I.P Leaks, D.N.S leaks, WebRtc Leaks and etc. To show How strong is your network. It works Without V.P.N because it check leaks that V.P.Ns usually use to protect. And Any Wrong Result is not responsible by us. Ise at Your Own Risk.Thanku!
+<div>
+    <label for="surface-web-progress">Surface Web Progress:</label>
+    <div class="progress-bar" id="surface-web-progress">
+        <span></span>
+    </div>
+</div>
+<div>
+    <label for="dark-web-progress">Dark Web Progress:</label>
+    <div class="progress-bar" id="dark-web-progress">
+        <span></span>
+    </div>
 </div>
 
-<script>function showAlert() {
-  document.querySelector(".alert").style.display = "block";
-}
-</script>
+    <div>
+        <p>WebRTC Leak Status: <span id="web-rtc-leak-status"></span></p>
+        <p>DNS Leak Status: <span id="dns-leak-status"></span></p>
+        <p>IP Leak Status: <span id="ip-leak-status"></span></p>
+    </div>
 
-
-  <script>
-  function checkIPLeak() {
-  fetch('https://api.myip.com')
-    .then(response => response.json())
-    .then(data => {
-      if (data.ip !== 'your.vpn.ip.address') {
-        console.log('IP Leak Detected');
-      } else {
-        console.log('No IP Leak');
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-}
-</script>
-
-
-<script>
-  const dnsPacket = require('dns-packet');
-const dns = require('dns.js');
-
-const dnsQuery = dnsPacket.encode({
-  type: 'query',
-  id: 1,
-  flags: dnsPacket.RECURSION_DESIRED,
-  questions: [{
-    type: 'A',
-    class: 'IN',
-    name: 'example.com'
-  }]
-});
-
-const dnsServer = '8.8.8.8';
-const dnsPort = 53;
-
-const socket = dgram.createSocket('udp4');
-socket.send(dnsQuery, 0, dnsQuery.length, dnsPort, dnsServer);
-
-socket.on('message', (message) => {
-  const response = dnsPacket.decode(message);
-  console.log(response.answers);
-});
-</script>
-
-<script>
-  function checkWebRTCLocalIP() {
-  var pc = new RTCPeerConnection(null);
-  pc.createDataChannel(''); // create a dummy data channel
-  pc.createOffer(pc.setLocalDescription.bind(pc), function() {}); // create offer and set local description
-  pc.onicecandidate = function(ice) { // listen for candidate events
-    if (!ice || !ice.candidate || !ice.candidate.candidate || !ice.candidate.candidate.match(/a=candidate.*\r\n/)) return;
-    var ip = ice.candidate.candidate.match(/a=candidate:.* /)[0].split(' ')[1];
-    console.log('WebRTC Local IP:', ip);
-  };
-}
-</script>
-
-
-<script>
-function checkVulnerabilities() {
-  var vulnerabilities = [
-    'https://example.com', // Replace with actual URLs to check
-    'https://example.com'
-  ];
-  var results = [];
-  var promises = vulnerabilities.map(function(url) {
-    return fetch(url)
-      .then(function(response) {
-        if (response.status === 200) {
-          results.push('Vulnerable');
-        } else {
-          results.push('Not Vulnerable');
-        }
-      })
-      .catch(function() {
-        results.push('Not Vulnerable');
-      });
-  });
-  Promise.all(promises).then(function() {
-    console.log(results);
-  });
-}
-</script>
-
-
-  <h1>Network Security</h1>
-  
-  <article>
-  <div class="progress-bar">
-    <div id="surface-web-progress" class="progress-bar-fill"></div>
-  </div>
-  <div class="progress-bar">
-    <div id="dark-web-progress" class="progress-bar-fill"></div>
-  </div>
-  <div class="category">
-    <span>Surface Web</span>
-    <span id="surface-web-strength"></span>
-  </div>
-  <div class="category">
-    <span>Dark Web</span>
-    <span id="dark-web-strength"></span>
-  </div>
-  <div class="category">
-    <span>WebRTC Leak</span>
-    <span id="web-rtc-leak-status"></span>
-  </div>
-  <div class="category">
-    <span>DNS Leak</span>
-    <span id="dns-leak-status"></span>
-  </div>
-  <div class="category">
-    <span>IP Leak</span>
-    <span id="ip-leak-status"></span>
-  </div></article>
-  <h3>The all Data Calculated With The Results Of Leak Checks.</h3><br>
-      
-      
-      
-         <footer>
-     <div class="footer-line"></div>
-     <div class="footer-wrapper">
-      <section class="footer-top">
-       <div class="footer-headline">
-   <h2>Subscribe to our newsletter</h2>
-      <p> Stay up to date with our news and articles </p>
-     </div>
-  <div class="footer-subscribe">
-      <input type="email" spellcheck="false" placeholder="Your Email">
-    <button> Sign Up </button>
-        </div>
-          </section>
-   <div class="footer-columns">
-    
-     <section>
-        <h3>Product</h3>
-    <ul>
-   <li>
-    <a href="https://fusionhubtool.github.io/Tools/" title="Pricing">Pricing</a></li>
-   <li>
-    <a href="https://fusionhubtool.github.io/Tools/" title="Documentation">Documentation</a></li>
-   <li>
-    <a href="https://fusionhubtool.github.io/Tools/error.html" title="Status">Status</a></li>
-          </ul>
-            </section>
-    <section>
-       <h3>Resources</h3>
-   <ul>
-    <li>
-     <a href="https://fusionhubtool.github.io/Tools/contact.html" title="Support">Support</a> </li>
-    <li>
-     <a href="https://fusionhubtool.github.io/Tools/contact" title="Help Centre">Help Centre</a></li>
-       </ul>
-          </section>
-   <section>
-      <h3>Company</h3>
-        <ul>
-           <li>
-             <a href="https://fusionhubtool.github.io/Tools/about.html" title="About Us">About Us</a></li>
-           <li>
-             <a href="https://fusionhubtool.github.io/Tools/error.html" title="Blog">Blog</a></li>
-           <li>
-             <a href="https://fusionhubtool.github.io/Tools/contact.html" title="Contact">Contact</a></li>
-             </ul>
-                </section>
-   <section>
-     <h3>Legal</h3>
-       <ul>
-         <li>
-           <a href="https://fusionhubtool.github.io/Tools/README.md" title="Terms and services">Terms</a></li>
-         <li>
-           <a href="https://fusionhubtool.github.io/Tools/Privacy.html" title="Privacy Policy">Privacy</a></li>
-         <li>
-           <a href="https://fusionhubtool.github.io/Tools/error.html" title="Licenses">Licenses</a></li>
-         <li>
-           <a href="https://fusionhubtool.github.io/Tools/error.html" title="Cookies">Contact</a></li>
-         </ul>
-            </section>
-                </div>
- <div class="footer-bottom">
-    <div class='social-links'>
-      <ul>
-        <li>
-       <a href="instagram.com/fusionhubtools" title="Instagram"><img src="assets/instagram.svg" alt='Instagram'></a></li>
-        <li>
-       <a href="https://fusionhubtool.github.io/Tools/error.html" title="Linkedin"><img src="assets/linkedin.svg" alt='Linkedin'></a></li>
-        <li>
-       <a href="x.com/fusionhub_ind" title="Twitter"><img src="assets/twitter.svg" alt='Twitter'></a></li>
-        <li>
-       <a href="" title="Youtube"><img src="assets/youtube.svg" alt='YouTube'></a></li>
-        <li>
-       <a href="https://github.com/fusionhubtool" title="GitHub"><img src="assets/github.svg" alt='GitHub'></a></li>
-          </ul>
-            </div>
-
-  <small>© Atheros Intelligence Ltd. <span id="year"></span>, All rights reserved</small>
-                </div>
-            </div>
-        </footer>
-        <script>
-            document.getElementById("year").innerHTML = new Date().getFullYear();
-        </script>
+    <script src="mainnet.js"></script>
 </body>
 </html>
