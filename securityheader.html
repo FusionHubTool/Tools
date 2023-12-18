@@ -19,9 +19,10 @@
       <link rel="stylesheet" href="style.css">
   <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Security Header|Of Urls</title>
 </head>
 <body>
-    <strong><header>
+   <header>
   <div class="topnav" id="myTopnav">
     <a href="#home" class="active"></a>
     <a href="index.html">Home</a>
@@ -32,15 +33,64 @@
       <i class="fa fa-bars"></i>
     </a>
   </div>
-</header></strong><br>
-<h1>Coming Soon!</h1><br>
-<h3>Subscribe To Get Informed</h3><br><hr>
-<iframe width="540" height="600" src="https://449c948a.sibforms.com/serve/MUIFAKXx4J1bNfG3_jxILhfi86RK7eggRVclacTaHApFHJF6kujfvl7NsO6vOzVo_IBC82gUrzwyzwLVlLeZG5AmDvUgpkSltslQIW2PFn0T5EiBROFPCI7lF2CXypK2LUyWXCVR5a5O3L3un7RYG089lLNzr01VDqsZfjHBKdLqJDxBQtuJSvvV2koW9lpS7VMRmYAgwHJDULE8" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe><br>
-<hr>
+</header><br>
 
+    <style>
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
 
+        .button2:hover {
+            opacity: 0.8;
+        }
 
+        #header-output {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+        }
+    </style>
+    
+    <br> <br><br>
+    <article><h2>URL Security Header</h2></article><br>
+   <article> <p>Enter a URL and click "Get Header" to view its security header:</p></article>
+<br>
+<article>
+    <input type="text" id="url-input" placeholder="Enter URL here...">
+    <button onclick="getHeader()" class="button2">Get Header</button>
 
+    <textarea id="header-output" readonly></textarea>
+</article><br>
+    <script>
+        function getHeader() {
+            var url = document.getElementById('url-input').value;
+            if (url.trim() === '') {
+                alert('Please enter a URL');
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    var securityHeader = xhr.getResponseHeader('Strict-Transport-Security');
+                    document.getElementById('header-output').value = 'Strict-Transport-Security: ' + securityHeader;
+                }
+            };
+            xhr.send(null);
+        }
+    </script>
+</body>
+</html>
 
 
    <footer>
