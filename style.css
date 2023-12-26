@@ -4,17 +4,9 @@ body {
     background: black;
     color: #333;
     text-align: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
-
-.gradientheading{
-            background: linear-gradient(45deg, #59BC81, #f80);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 32px;
-            padding-top: 50px;
-        }
-        
-        
 
 article {
   background-color: #e9f5ed;
@@ -46,12 +38,15 @@ article a:hover{
     padding: 40px;
     background: #fff;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
+   overflow: scroll;
 }
 
 h1 {
-    font-size: 36px;
-    color: green;
-    margin-bottom: 10px;
+   background: linear-gradient(45deg, #59BC81, #f80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 32px;
+            padding-top: 30px;
 }
 
 p {
@@ -126,10 +121,10 @@ header{
     top: 0px;
     left: 0px;
     width: 100%;
+    height: auto;
     background-image: url(Images/bgvideo.gif);
     background-size: cover;
     height: 65px;
-    max-height: 250px;
 }
   /* Style for the navigation menu */
   .topnav {
@@ -157,7 +152,7 @@ header{
   }
 
   /* Media query for small screens */
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width:1500px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
       float: right;
@@ -166,7 +161,7 @@ header{
   }
 
   /* When the "hamburger menu" is clicked, show the navigation links */
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1500px) {
     .topnav.responsive {position: relative;}
     .topnav.responsive a.icon {
       position: absolute;
@@ -465,7 +460,6 @@ footer {
         margin: 0 auto;
     }
 }
-
 
 
 
