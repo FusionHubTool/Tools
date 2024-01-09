@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head lang="en-US">
+<head>
       <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-78MDV74DXC"></script>
 <script>
@@ -10,83 +10,90 @@
 
   gtag('config', 'G-78MDV74DXC');
 </script>
+
+
+    <meta charset=""UTF-8>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>IP Lookup</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script>
-        function lookup() {
-            var inputIP = document.getElementById("inputIP").value;
-            var resultDiv = document.getElementById("result");
+  <title>Security Header Checker</title>
 
-            // Clear previous results
-            resultDiv.innerHTML = "";
-
-            // Use an API to fetch IP address and website details
-            fetch("https://ipinfo.io/" + inputIP + "/json")
-                .then(response => response.json())
-                .then(data => {
-                    // Display the IP address
-                    var ipAddress = document.createElement("p");
-                    ipAddress.textContent = "IP Address: " + data.ip;
-                    resultDiv.appendChild(ipAddress);
-
-                    // Display other details (e.g., organization, city, region)
-                    var details = document.createElement("p");
-                    details.textContent = "Details: " + data.org + ", " + data.city + ", " + data.region;
-                    resultDiv.appendChild(details);
-                })
-                .catch(error => {
-                    // Handle errors
-                    var errorMessage = document.createElement("p");
-                    errorMessage.textContent = "Error: " + error.message;
-                    resultDiv.appendChild(errorMessage);
-                });
-        }
-    </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://fusionhubtool.github.io/Tools/Styles/style.css">
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Security Header|Of Urls</title>
 </head>
 <body>
-     <header>
+   <header>
   <div class="topnav" id="myTopnav">
     <a href="#home" class="active"></a>
-    <a href="https://fusionhubtool.github.io/index.html">Home</a>
-    <a href="https://fusionhubtool.github.io/about.html">About</a>
-    <a href="https://fusionhubtool.github.io/Privacy.html">Privacy Policy</a>
-    <a href="https://fusionhubtool.github.io/contact.html">Contact</a>
+    <a href="https://fusionhubtool.github.io/Tools/index">Home</a>
+    <a href="https://fusionhubtool.github.io/Tools/about">About</a>
+    <a href="https://fusionhubtool.github.io/Tools/Privacy">Privacy Policy</a>
+    <a href="https://fusionhubtool.github.io/Tools/contact">Contact</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
-</header><br><br><br><br>
+</header><br>
 
-    <script>
-  function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
-</script>
+    <style>
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        .button2:hover {
+            opacity: 0.8;
+        }
+
+        #header-output {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+        }
+    </style>
+    
+    <br> <br><br>
+    <article><h2>URL Security Header</h2></article><br>
+   <article> <p>Enter a URL and click "Get Header" to view its security header:</p></article>
+<br>
 <article>
-    <h1>I.P Network Provider</h1>
-    <p>Enter a I.P to get its network provider and details:</p>
-    <input type="text" id="inputIP" placeholder="Enter Target IP">
-    <button onclick="lookup()" class="button2">Lookup</button>
-    <div id="result"></div></article>
-   <br>
-<article>
-<h3>Don't have I.P Addres?</h3>
-<a href="IP.html"><img src="Images/ip.png"></a><br>
-<a href="IP.html">Get you IP address</a>
+    <input type="text" id="url-input" placeholder="Enter URL here...">
+    <button onclick="getHeader()" class="button2">Get Header</button>
+
+    <textarea id="header-output" readonly></textarea>
 </article><br>
+    <script>
+        function getHeader() {
+            var url = document.getElementById('url-input').value;
+            if (url.trim() === '') {
+                alert('Please enter a URL');
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    var securityHeader = xhr.getResponseHeader('Strict-Transport-Security');
+                    document.getElementById('header-output').value = 'Strict-Transport-Security: ' + securityHeader;
+                }
+            };
+            xhr.send(null);
+        }
+    </script>
+</body>
+</html>
 
 
-           <footer>
+   <footer>
      <div class="footer-line"></div>
      <div class="footer-wrapper">
       <section class="footer-top">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
       <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-78MDV74DXC"></script>
@@ -14,85 +14,60 @@
 
     <meta charset=""UTF-8>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Security Header Checker</title>
-
-      <link rel="stylesheet" href="style.css">
+  <title>HTTP Header Checker</title>
+  
+      <link rel="stylesheet" href="https://fusionhubtool.github.io/Tools/Styles/style.css">
   <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>Security Header|Of Urls</title>
+
+
+<script> 
+async function checkHeaders() { const url = document.getElementById('url').value; try { const response = await fetch(url, { method: 'HEAD' }); const headers = response.headers; let output = `<table border="1"><tr><th>Header</th><th>Value</th></tr>`; for (let pair of headers.entries()) { output += `<tr><td>${pair[0]}</td><td>${pair[1]}</td></tr>`; } output += '</table>'; document.getElementById('output').innerHTML = output; } catch (error) { document.getElementById('output').innerHTML = `Error: ${error.message}`; } } </script>   
 </head>
 <body>
-   <header>
+    <header>
   <div class="topnav" id="myTopnav">
     <a href="#home" class="active"></a>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="Privacy.html">Privacy Policy</a>
-    <a href="contact.html">Contact</a>
+    <a href="https://fusionhubtool.github.io/Tools/index.html">Home</a>
+    <a href="https://fusionhubtool.github.io/Tools/about.html">About</a>
+    <a href="https://fusionhubtool.github.io/Tools/Privacy.html">Privacy Policy</a>
+    <a href="https://fusionhubtool.github.io/Tools/contact.html">Contact</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
 </header><br>
+<script>
 
-    <style>
-        
-        input[type="text"] {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            box-sizing: border-box;
-        }
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
 
-        .button2:hover {
-            opacity: 0.8;
-        }
-
-        #header-output {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            box-sizing: border-box;
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 0.25rem;
-        }
-    </style>
-    
-    <br> <br><br>
-    <article><h2>URL Security Header</h2></article><br>
-   <article> <p>Enter a URL and click "Get Header" to view its security header:</p></article>
+  <h1 class="gradientheading">HTTP Header Checker</h1>
+<article><label for="url">Enter the URL to check:</label>
+<input type="text" id="url" name="url"> 
 <br>
-<article>
-    <input type="text" id="url-input" placeholder="Enter URL here...">
-    <button onclick="getHeader()" class="button2">Get Header</button>
-
-    <textarea id="header-output" readonly></textarea>
+<button onclick="checkHeaders()">Check Headers</button><br> 
+<div id="output"></div>
 </article><br>
-    <script>
-        function getHeader() {
-            var url = document.getElementById('url-input').value;
-            if (url.trim() === '') {
-                alert('Please enter a URL');
-                return;
-            }
 
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', url, true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    var securityHeader = xhr.getResponseHeader('Strict-Transport-Security');
-                    document.getElementById('header-output').value = 'Strict-Transport-Security: ' + securityHeader;
-                }
-            };
-            xhr.send(null);
-        }
-    </script>
-</body>
-</html>
+  <article>
+  <h1>About</h1>The HTTP Header Checker is a simple yet powerful tool that allows you to quickly retrieve the HTTP headers of any URL. This tool is part of the FusionHubTool collection, a comprehensive set of network testing and troubleshooting tools.<br><br>
 
+HTTP headers are a crucial part of the HTTP protocol, providing additional information about the request or the response. They can contain a wide variety of information, from the server's software version to the type of data being returned by the server.<br><br>
 
+With the HTTP Header Checker, you can gain valuable insights into how a website is configured and what security measures are in place. For example, the 'Server' header can reveal the type and version of the server software, which can be useful for identifying potential vulnerabilities. The 'Content-Type' header can tell you what type of data the server is returning, and the 'Content-Length' header can give you an idea of the size of the response.<br><br>
+
+To use the tool, simply enter the URL of the website you're interested in and click 'Check Headers'. The tool will then send a HEAD request to the URL and display the headers in a user-friendly format.<br><br>
+
+Remember, while this tool can provide valuable information, it should be used responsibly and ethically. It's not meant for malicious purposes, but rather for understanding and improving the security of your own network.</article><br><hr>
+  
    <footer>
      <div class="footer-line"></div>
      <div class="footer-wrapper">
@@ -112,7 +87,7 @@
         <h3>Product</h3>
     <ul>
    <li>
-    <a href="https://fusionhubtool.github.io/Tools/" title="Pricing">Pricing</a></li>
+    <a href="https://fusionhubtool.github.io/Tools/README" title="Pricing">Pricing</a></li>
    <li>
     <a href="https://fusionhubtool.github.io/Tools/" title="Documentation">Documentation</a></li>
    <li>
@@ -176,5 +151,6 @@
         <script>
             document.getElementById("year").innerHTML = new Date().getFullYear();
         </script>
+
 </body>
 </html>

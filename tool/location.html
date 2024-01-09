@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-      <!-- Google tag (gtag.js) -->
+  <head>
+        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-78MDV74DXC"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -10,28 +10,26 @@
 
   gtag('config', 'G-78MDV74DXC');
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <meta charset=""UTF-8>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IP Lookup</title>
+    <title>Location</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="style.css">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
+  
+      <link rel="stylesheet" href="https://fusionhubtool.github.io/Tools/Styles/style.css">
+  </head>
 <body>
-     <header>
+  <strong><header>
   <div class="topnav" id="myTopnav">
     <a href="#home" class="active"></a>
-    <a href="https://fusionhubtool.github.io/index.html">Home</a>
-    <a href="https://fusionhubtool.github.io/about.html">About</a>
-    <a href="https://fusionhubtool.github.io/Privacy.html">Privacy Policy</a>
-    <a href="https://fusionhubtool.github.io/contact.html">Contact</a>
+    <a href="https://fusionhubtool.github.io/Tools/index">Home</a>
+    <a href="https://fusionhubtool.github.io/Tools/about">About</a>
+    <a href="https://fusionhubtool.github.io/Tools/Privacy">Privacy Policy</a>
+    <a href="https://fusionhubtool.github.io/Tools/contact">Contact</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
-</header><br>
+</header></strong><br>
     <script>
   function myFunction() {
     var x = document.getElementById("myTopnav");
@@ -42,44 +40,89 @@
     }
   }
 </script>
+  <style>
+    /* Basic Button Styles */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-   <h1>IP Address Lookup</h1>
-   
-   <style>
+/* Hover Effect */
+.button:hover {
+  background-color: #2980b9;
+}
 
-   </style>
-   <article>
-<div>
-    <h1>Enter IP Address</h1><br>
-    <input type="text" id="ipAddress" />
-    <button onclick="getIPDetails()" class="button2">Get Details</button>
-    <div id="details"></div>
-   </article><br>
-<script>
-    function getIPDetails() {
-        var ipAddress = document.getElementById('ipAddress').value;
-        var url = 'https://freeipapi.com/api/json/' + ipAddress;
-        fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            var details = document.getElementById('details');
-            details.innerHTML = '<h2>Details</h2>';
-            for (var key in data) {
-                details.innerHTML += '<p>' + key + ': ' + data[key] + '</p>';
-            }
-        })
-        .catch(error => console.error('Error:', error));
-    }
-</script>
-</article>
-<br>
+/* Optional: Add box shadow for depth */
+.button:focus, .button:active {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+  </style>
+ <br><br><br>
   <article>
-      <h3>Want Geolocation?</h3>
-         <a href="location.html"> <img src="Images/geo.png"></a><br>
-    <h3><a href="location.html">Track you Geolocation By this Tool</a></h3><br>
-      This Tool Will Fetch Your Coordinate From Your Location. We Provide Most Accurate Coordinates.
-    </article><br>
-<br>
+<h1>Geolocation</h1>
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Get It</button>
+
+<p id="demo"></p>
+  </article>
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      x.innerHTML = "User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      x.innerHTML = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML = "An unknown error occurred."
+      break;
+  }
+}
+</script><hr><br>
+<article><h3>Need I.P Address?</h3>    <a href="IP.html"><img src="Images/ip.png" alt="I.P Gather"></a><br>
+   <h3> <a href="https://fusionhubtool.github.io/Tools/IP">Get Your IP Address</a></h3><br>
+    This Tool Provide I.P Address Of Yours. We are not responsible for any misuse and accuracy error.</article><hr><br>
+  <article><ul>
+<b>Geolocation:</b> Bridging the gap between the digital and physical worlds<br>
+
+<li>Geolocation is the process of determining the geographic location of a device connected to the Internet. It is used to power a wide range of applications and services, such as location-based services (LBS), targeted advertising, fraud detection, and asset tracking.</li>
+
+<li>The future of geolocation is likely to be shaped by the development of new technologies, such as the increasing use of sensors in mobile devices. However, it is important to consider the ethical and social implications of geolocation, such as the potential for misuse of personal data.</li>
+
+<li>Overall, geolocation is a powerful tool that has the potential to both benefit and harm society. It is important to use geolocation responsibly and to be aware of the potential risks associated with its use.</li>
+  </ul>
+  </article>
+  
    <footer>
      <div class="footer-line"></div>
      <div class="footer-wrapper">
@@ -99,7 +142,7 @@
         <h3>Product</h3>
     <ul>
    <li>
-    <a href="https://fusionhubtool.github.io/Tools/" title="Pricing">Pricing</a></li>
+    <a href="https://fusionhubtool.github.io/Tools/README" title="Pricing">Pricing</a></li>
    <li>
     <a href="https://fusionhubtool.github.io/Tools/" title="Documentation">Documentation</a></li>
    <li>

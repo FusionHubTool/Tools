@@ -18,8 +18,32 @@
       background-color: #4caf50;
     }
     </style>
+    <link real="stylesheet" href="https://fusionhubtool.github.io/Tools/Styles/style.css">
 </head>
 <body>
+    <header>
+  <div class="topnav" id="myTopnav">
+    <a href="#home" class="active"></a>
+    <a href="https://fusionhubtool.github.io/Tools/index">Home</a>
+    <a href="https://fusionhubtool.github.io/Tools/about">About</a>
+    <a href="https://fusionhubtool.github.io/Tools/Privacy">Privacy Policy</a>
+    <a href="https://fusionhubtool.github.io/Tools/contact">Contact</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</header><br><br><br><br>
+    <script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
     <h1>Security Checker</h1>
 
 <div>
@@ -41,6 +65,6 @@
         <p>IP Leak Status: <span id="ip-leak-status"></span></p>
     </div>
 
-    <script src="mainnet.js"></script>
+    <script src="https://fusionhubtool.github.io/Tools/scripts/mainnet.js"></script>
 </body>
 </html>
