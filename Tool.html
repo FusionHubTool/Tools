@@ -1,236 +1,291 @@
+
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-78MDV74DXC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Google tag (gtag.js) -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-78MDV74DXC"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+   
+     gtag('config', 'G-78MDV74DXC');
+   </script>
+       <meta charset=""UTF-8>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-  gtag('config', 'G-78MDV74DXC');
-</script>
-    <meta charset=""UTF-8>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    
-    <title>FusionHub</title>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-<link rel="manifest" href="favicon/site.webmanifest">
-    
-    <link rel="stylesheet" href="Styles/style.css">
-  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <title>FusionHub</title>
+       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+       <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+       <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+       <link rel="manifest" href="favicon/site.webmanifest">
+           
+           <link rel="stylesheet" href="style.css">
+         <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+               <link rel="preconnect" href="https://fonts.googleapis.com">
+               <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+               <link
+                   href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap"
+                   rel="stylesheet"
+               >
+       <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+       <meta property="og:type" content="website"/>
+	<!-- CSS only -->
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+  overflow-x:  hidden !important;
+}
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap"
-            rel="stylesheet"
-        >
-        
-        
-     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: rgb(5, 0, 0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidenav{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient( to right, #1f0202, #08021b);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover{
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn{
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main{
+  transition: margin-left .5s;
+  padding: 0px;
+  padding-top: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
 </head>
 <body>
+<header> <span style="font-size:30px;cursor:pointer;color:#fff" onclick="openNav()">&#9776;</span></header>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="https://fusionhubtool.github.io/Tools/index.html">Home</a>
+  <a href="https://fusionhubtool.github.io/Tools/about.html">About</a>
+  <a href="https://fusionhubtool.github.io/Tools/Privacy.html">Privacy Policy</a>
+  <a href="https://fusionhubtool.github.io/Tools/contact.html">Contact</a>
+</div>
 
-  
-  
-  <header>
-  <div class="topnav" id="myTopnav">
-    <a href="#home" class="active"></a>
-    <a href="https://fusionhubtool.github.io/Tools/index.html">Home</a>
-    <a href="https://fusionhubtool.github.io/Tools/about.html">About</a>
-    <a href="https://fusionhubtool.github.io/Tools/Privacy.html">Privacy Policy</a>
-    <a href="https://fusionhubtool.github.io/Tools/contact.html">Contact</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-</header><br>
+
 
 <script>
+function openNav(){
+  document.getElementById("mySidenav").style.width = "250px"
+  document.getElementById("main").style.marginLeft = "250px"
+  document.body.style.backgroundColor = "#131313"
+}
 
-  function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
+function closeNav(){
+  document.getElementById("mySidenav").style.width = "0"
+  document.getElementById("main").style.marginLeft= "0"
+  document.body.style.backgroundColor = "#000"
+}
 </script>
 
-    <br><br><br>
-    <div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-  <strong>Warning!</strong><br> This website provides tools for ethical use only. Please do not use these tools for unethical purposes, such as hacking, spying, harassing, spreading misinformation, or violating the privacy of others. If you are caught using these tools for unethical purposes, your account may be banned and you may be reported to the authorities
+<div id="main">
+  <div class="alert">
+<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+<strong>Warning!</strong><br> This website provides tools for ethical use only. Please do not use these tools for unethical purposes, such as hacking, spying, harassing, spreading misinformation, or violating the privacy of others. If you are caught using these tools for unethical purposes, your account may be banned and you may be reported to the authorities
 </div>
 <br>
-   <div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-  <strong>Special Attention!</strong><br> Hello Everyone, Our Privacy Policy Is changed now. So please Preview it here: <a href="https://fusionhubtool.github.io/Tools/Privacy.html">Privacy Policy</a>
+ <div class="alert">
+<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+<strong>Special Attention!</strong><br> Hello Everyone, Our Privacy Policy Is changed now. So please Preview it here: <a href="https://fusionhubtool.github.io/Tools/Privacy.html">Privacy Policy</a>
 </div>
 
 <script>function showAlert() {
-  document.querySelector(".alert").style.display = "block";
+document.querySelector(".alert").style.display = "block";
 }
 </script>
 
 
-   <h1 class="gradientheading">Select Your Tools</h1><br>
- <article>
+ <h1 class="gradientheading">Select Your Tools</h1><br>
+<article>
 <h2>Know Your Coordinates</h2><br>
-   <a href="https://fusionhubtool.github.io/Tools/tool/location"> <img src="Images/geo.png"></a><br>
-    <h3><a href="https://fusionhubtool.github.io/Tools/tool/location">Track you Geolocation By this Tool</a></h3><br>
-      This Tool Will Fetch Your Coordinate From Your Location. We Provide Most Accurate Coordinates.
-    </article>
-    <br>
+ <a href="https://fusionhubtool.github.io/Tools/tool/location"> <img src="https://fusionhubtool.github.io/Tools/Images/geo.png"></a><br>
+  <h3><a href="https://fusionhubtool.github.io/Tools/tool/location">Track you Geolocation By this Tool</a></h3><br>
+    This Tool Will Fetch Your Coordinate From Your Location. We Provide Most Accurate Coordinates.
+  </article>
+  <br>
 <article><h2>Get Your I.P Address</h2><br>
-    <a href="https://fusionhubtool.github.io/Tools/tool/IP"><img src="Images/ip.png" alt="I.P Gather"></a><br>
-   <h3> <a href="https://fusionhubtool.github.io/Tools/tool/IP">Get Your IP Address</a></h3><br>
-    This Tool Provide I.P Address Of Yours. We are not responsible for any misuse and accuracy error.
+  <a href="https://fusionhubtool.github.io/Tools/tool/IP"><img src="https://fusionhubtool.github.io/Tools/Images/ip.png" alt="I.P Gather"></a><br>
+ <h3> <a href="https://fusionhubtool.github.io/Tools/tool/IP">Get Your IP Address</a></h3><br>
+  This Tool Provide I.P Address Of Yours. We are not responsible for any misuse and accuracy error.
 </article><br>
 
 <article><h2>Location Of I.P</h2><br>
-    <a href="https://fusionhubtool.github.io/Tools/tool/IPlo"><img src="Images/iplo.png" alt="location of I.P"></a><br>
-    <h3><a href="https://fusionhubtool.github.io/Tools/tool/IPlo">Get location With IP address</a></h3><br>This Tool Will Provide The Location Of Any I.P. This only requires I.P. Provide City, State and Country.</article><br>
-    
+  <a href="https://fusionhubtool.github.io/Tools/tool/IPlo"><img src="https://fusionhubtool.github.io/Tools/Images/iplo.png" alt="location of I.P"></a><br>
+  <h3><a href="https://fusionhubtool.github.io/Tools/tool/IPlo">Get location With IP address</a></h3><br>This Tool Will Provide The Location Of Any I.P. This only requires I.P. Provide City, State and Country.</article><br>
+  
 <article><h2>Network Provider</h2><br>
-    <a href="https://fusionhubtool.github.io/Tools/tool/np"><img src="Images/np.png" alt="Network Provider"></a>
-   <h3> <a href="https://fusionhubtool.github.io/Tools/tool/np">Network Provider of IP</a></h3><br>Get The Network Provider (Jio/Airtel/Broadband etc)Of An I.P with Location Also.</article><br>
-    
+  <a href="https://fusionhubtool.github.io/Tools/tool/np"><img src="https://fusionhubtool.github.io/Tools/Images/np.png" alt="Network Provider"></a>
+ <h3> <a href="https://fusionhubtool.github.io/Tools/tool/np">Network Provider of IP</a></h3><br>Get The Network Provider (Jio/Airtel/Broadband etc)Of An I.P with Location Also.</article><br>
+
 <article><h2>Is Your Network Safe?</h2><br>
-   <a href="https://fusionhubtool.github.io/Tools/tool/net"><img src="Images/net.jpg" alt="Leaks"></a>
-   <h3><a href="https://fusionhubtool.github.io/Tools/tool/net">Check You Are Safe!</a></h3><br>This Tool Is Checks The I.P, D.N.S leaks etc. This Checks The Strength Of Your V.P.N Provider. <b>We are Not Responsible For Any Harm.</b>
-    </article><br>
+ <a href="https://fusionhubtool.github.io/Tools/tool/net"><img src="https://fusionhubtool.github.io/Tools/Images/net.jpg" alt="Leaks"></a>
+ <h3><a href="https://fusionhubtool.github.io/Tools/tool/net">Check You Are Safe!</a></h3><br>This Tool Is Checks The I.P, D.N.S leaks etc. This Checks The Strength Of Your V.P.N Provider. <b>We are Not Responsible For Any Harm.</b>
+  </article><br>
 
 <article><h2>HTTP Header Checker.</h2><br>
-   <a href="https://fusionhubtool.github.io/Tools/tool/head"><img src="Images/head.jpg" alt="Leaks"></a>
-   <h3><a href="https://fusionhubtool.github.io/Tools/tool/head">Check HTTP Header Of Any Website.</a></h3></article><br>
-   
-   <article><h2>Security Header Checker</h2><br>
-    <a href="https://fusionhubtool.github.io/Tools/securityheader"><img src="Images/security.jpg" alt="I.P Gather"></a><br>
-   <h3> <a href="https://fusionhubtool.github.io/Tools/tool/securityheader">Security Header</a></h3><br>
-    This Tool Provide Security Header Of Any Url.
+ <a href="https://fusionhubtool.github.io/Tools/tool/head"><img src="https://fusionhubtool.github.io/Tools/Images/head.jpg" alt="Leaks"></a>
+ <h3><a href="https://fusionhubtool.github.io/Tools/tool/head">Check HTTP Header Of Any Website.</a></h3></article><br>
+ 
+ <article><h2>Security Header Checker</h2><br>
+  <a href="https://fusionhubtool.github.io/Tools/securityheader"><img src="https://fusionhubtool.github.io/Tools/Images/security.jpg" alt="I.P Gather"></a><br>
+ <h3> <a href="https://fusionhubtool.github.io/Tools/tool/securityheader">Security Header</a></h3><br>
+  This Tool Provide Security Header Of Any Url.
 </article><br>
-   
 
 <div id="feedback">
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScdlri0SO1yDa0R-x8VRi0rmgI1Y1nAxaucRtaj_Dt0McDmpQ/viewform?embedded=true" width="100%" height="645" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 </div><br><br>
-      
-      
-      
-<script>
-  (function (w, d, s, o, f, js, fjs) {
-    w["botsonic_widget"] = o;
-    w[o] =
-      w[o] ||
-      function () {
-        (w[o].q = w[o].q || []).push(arguments);
-      };
-    (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
-    js.id = o;
-    js.src = f;
-    js.async = 1;
-    fjs.parentNode.insertBefore(js, fjs);
-  })(window, document, "script", "Botsonic", "https://widget.writesonic.com/CDN/botsonic.min.js");
-  Botsonic("init", {
-    serviceBaseUrl: "https://api.botsonic.ai",
-    token: "fc9dd96e-c880-4cdf-b516-fa252f9c4f12",
-  });
-</script>
-      
-      
-   <footer>
-     <div class="footer-line"></div>
-     <div class="footer-wrapper">
-      <section class="footer-top">
-       <div class="footer-headline">
-   <h2>Subscribe to our newsletter</h2>
-      <p> Stay up to date with our news and articles </p>
-     </div>
-  <div class="footer-subscribe">
-      <input type="email" spellcheck="false" placeholder="Your Email">
-    <button> Sign Up </button>
-        </div>
-          </section>
-   <div class="footer-columns">
     
-     <section>
-        <h3>Product</h3>
-    <ul>
-   <li>
-    <a href="https://fusionhubtool.github.io/Tools/" title="Pricing">Pricing</a></li>
-   <li>
-    <a href="https://fusionhubtool.github.io/Tools/" title="Documentation">Documentation</a></li>
-   <li>
-    <a href="https://fusionhubtool.github.io/Tools/error.html" title="Status">Status</a></li>
-          </ul>
-            </section>
-    <section>
-       <h3>Resources</h3>
-   <ul>
-    <li>
-     <a href="https://fusionhubtool.github.io/Tools/contact.html" title="Support">Support</a> </li>
-    <li>
-     <a href="https://fusionhubtool.github.io/Tools/contact" title="Help Centre">Help Centre</a></li>
+    
+    
+<script>
+(function (w, d, s, o, f, js, fjs) {
+  w["botsonic_widget"] = o;
+  w[o] =
+    w[o] ||
+    function () {
+      (w[o].q = w[o].q || []).push(arguments);
+    };
+  (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+  js.id = o;
+  js.src = f;
+  js.async = 1;
+  fjs.parentNode.insertBefore(js, fjs);
+})(window, document, "script", "Botsonic", "https://widget.writesonic.com/CDN/botsonic.min.js");
+Botsonic("init", {
+  serviceBaseUrl: "https://api.botsonic.ai",
+  token: "fc9dd96e-c880-4cdf-b516-fa252f9c4f12",
+});
+</script>
+    
+    
+ <footer>
+   <div class="footer-line"></div>
+   <div class="footer-wrapper">
+    <section class="footer-top">
+     <div class="footer-headline">
+ <h2>Subscribe to our newsletter</h2>
+    <p> Stay up to date with our news and articles </p>
+   </div>
+<div class="footer-subscribe">
+    <input type="email" spellcheck="false" placeholder="Your Email">
+  <button> Sign Up </button>
+      </div>
+        </section>
+ <div class="footer-columns">
+  
+   <section>
+      <h3>Product</h3>
+  <ul>
+ <li>
+  <a href="https://fusionhubtool.github.io/Tools/" title="Pricing">Pricing</a></li>
+ <li>
+  <a href="https://fusionhubtool.github.io/Tools/" title="Documentation">Documentation</a></li>
+ <li>
+  <a href="https://fusionhubtool.github.io/Tools/error.html" title="Status">Status</a></li>
+        </ul>
+          </section>
+  <section>
+     <h3>Resources</h3>
+ <ul>
+  <li>
+   <a href="https://fusionhubtool.github.io/Tools/contact.html" title="Support">Support</a> </li>
+  <li>
+   <a href="https://fusionhubtool.github.io/Tools/contact" title="Help Centre">Help Centre</a></li>
+     </ul>
+        </section>
+ <section>
+    <h3>Company</h3>
+      <ul>
+         <li>
+           <a href="https://fusionhubtool.github.io/Tools/about.html" title="About Us">About Us</a></li>
+         <li>
+           <a href="https://fusionhubtool.github.io/Tools/error.html" title="Blog">Blog</a></li>
+         <li>
+           <a href="https://fusionhubtool.github.io/Tools/contact.html" title="Contact">Contact</a></li>
+           </ul>
+              </section>
+ <section>
+   <h3>Legal</h3>
+     <ul>
+       <li>
+         <a href="https://fusionhubtool.github.io/Tools/README.md" title="Terms and services">Terms</a></li>
+       <li>
+         <a href="https://fusionhubtool.github.io/Tools/Privacy.html" title="Privacy Policy">Privacy</a></li>
+       <li>
+         <a href="https://fusionhubtool.github.io/Tools/error.html" title="Licenses">Licenses</a></li>
+       <li>
+         <a href="https://fusionhubtool.github.io/Tools/error.html" title="Cookies">Contact</a></li>
        </ul>
           </section>
-   <section>
-      <h3>Company</h3>
-        <ul>
-           <li>
-             <a href="https://fusionhubtool.github.io/Tools/about.html" title="About Us">About Us</a></li>
-           <li>
-             <a href="https://fusionhubtool.github.io/Tools/error.html" title="Blog">Blog</a></li>
-           <li>
-             <a href="https://fusionhubtool.github.io/Tools/contact.html" title="Contact">Contact</a></li>
-             </ul>
-                </section>
-   <section>
-     <h3>Legal</h3>
-       <ul>
-         <li>
-           <a href="https://fusionhubtool.github.io/Tools/README.md" title="Terms and services">Terms</a></li>
-         <li>
-           <a href="https://fusionhubtool.github.io/Tools/Privacy.html" title="Privacy Policy">Privacy</a></li>
-         <li>
-           <a href="https://fusionhubtool.github.io/Tools/error.html" title="Licenses">Licenses</a></li>
-         <li>
-           <a href="https://fusionhubtool.github.io/Tools/error.html" title="Cookies">Contact</a></li>
-         </ul>
-            </section>
-                </div>
- <div class="footer-bottom">
-    <div class='social-links'>
-      <ul>
-        <li>
-       <a href="instagram.com/fusionhubtools" title="Instagram"><img src="https://fusionhubtool.github.io/Tools/assets/instagram.svg" alt='Instagram'></a></li>
-        <li>
-       <a href="https://fusionhubtool.github.io/Tools/error.html" title="Linkedin"><img src="assets/linkedin.svg" alt='Linkedin'></a></li>
-        <li>
-       <a href="x.com/fusionhub_ind" title="Twitter"><img src="https://fusionhubtool.github.io/Tools/assets/twitter.svg" alt='Twitter'></a></li>
-        <li>
-       <a href="" title="Youtube"><img src="assets/youtube.svg" alt='YouTube'></a></li>
-        <li>
-       <a href="https://github.com/fusionhubtool" title="GitHub"><img src="https://fusionhubtool.github.io/Tools/assets/github.svg" alt='GitHub'></a></li>
-          </ul>
-            </div>
+              </div>
+<div class="footer-bottom">
+  <div class='social-links'>
+    <ul>
+      <li>
+     <a href="instagram.com/fusionhubtools" title="Instagram"><img src="https://fusionhubtool.github.io/Tools/assets/instagram.svg" alt='Instagram'></a></li>
+      <li>
+     <a href="https://fusionhubtool.github.io/Tools/error.html" title="Linkedin"><img src="https://fusionhubtool.github.io/Tools/assets/linkedin.svg" alt='Linkedin'></a></li>
+      <li>
+     <a href="x.com/fusionhub_ind" title="Twitter"><img src="https://fusionhubtool.github.io/Tools/assets/twitter.svg" alt='Twitter'></a></li>
+      <li>
+     <a href="" title="Youtube"><img src="https://fusionhubtool.github.io/Tools/assets/youtube.svg" alt='YouTube'></a></li>
+      <li>
+     <a href="https://github.com/fusionhubtool" title="GitHub"><img src="https://fusionhubtool.github.io/Tools/assets/github.svg" alt='GitHub'></a></li>
+        </ul>
+          </div>
 
-  <small>© Atheros Intelligence Ltd. <span id="year"></span>, All rights reserved</small>
-                </div>
-            </div>
-        </footer>
-        <script>
-            document.getElementById("year").innerHTML = new Date().getFullYear();
-        </script>
-
-  </body>
+<small>© Atheros Intelligence Ltd. <span id="year"></span>, All rights reserved</small>
+              </div>
+          </div>
+      </footer>
+      <script>
+          document.getElementById("year").innerHTML = new Date().getFullYear();
+      </script>
+   </div>
+</body>
 </html>
-
-            
