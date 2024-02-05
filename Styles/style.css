@@ -40,6 +40,7 @@ h1 {
   font-size: 32px;
   padding-top: 30px;
   text-align: center;
+  font-family: Georgia, serif;
 }
 
 p {
@@ -87,22 +88,27 @@ p {
   overflow: scroll;
 }
 
+  article p{
+    color: #000;
+    font-family: Georgia, serif;
+  }
 
-  article h1 {
+  article h2 {
     color: #007bff;
+    font-family: comic sans ms;
   }
 
   article a {
     text-decoration: none;
     border: 3px;
-    border-radius: 10px;
-    background-color: #10fc3bdc;
+    border-radius: 6px;
+    background-color: rgba(95,99,104,.38);
 
   }
 
   article a:hover {
     padding: 3px;
-    background-color: rgba(66, 171, 140, 0.8);
+    background-color: rgb(26,115,232);
     transition: .5s;
     color: black;
   }
@@ -110,14 +116,13 @@ p {
 
 @media screen and (min-width: 1024px) {
  article img {
-  float: left;
-  width: 30vw;
-  height: 30vh;
+  position: left;
+  height: 180px;
  }
 }
 
 article {
-  background-color: #e9f5ed;
+  background-image: repeating-linear-gradient( #f7c9c9f2,#9de19dcf,#9999f296);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -130,8 +135,8 @@ article {
 .alert {
   text-align: center;
   padding: 30px;
-  background-color: #f44336;
-  color: white;
+  background-color: #0d0d0d;
+  color: #f70101;
   margin-bottom: 15px;
 }
 
