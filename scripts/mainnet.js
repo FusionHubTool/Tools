@@ -32,7 +32,6 @@ function getDnsServers() {
 }
 
 console.log('DNS Servers:', getDnsServers());
-</script>
 
 
 async function checkVulnerabilities() {
