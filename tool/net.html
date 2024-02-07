@@ -1,18 +1,34 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-78MDV74DXC"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+   
+     gtag('config', 'G-78MDV74DXC');
+   </script>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta property="og:type" content="website"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security Checker| WebRtc Leaks| IP leaks| DNS leaks</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+       <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+       <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+       <link rel="manifest" href="favicon/site.webmanifest">
+       <script src="https://fusionhubtool.github.io/Tools/scripts/mainnet.js">
     <style>
-            .progress-bar {
+            .progress-bar{
       height: 20px;
       background-color: #f3f3f3;
       border-radius: 5px;
       overflow: hidden;
     }
-    .progress-bar span {
+    .progress-bar span{
       display: block;
       height: 100%;
       background-color: #4caf50;
@@ -21,38 +37,33 @@
     <link rel="stylesheet" href="https://fusionhubtool.github.io/Tools/Styles/style.css">
 </head>
 <body>
-    <header>
-  <div class="topnav" id="myTopnav">
-    <a href="#home" class="active"></a>
-    <a href="https://fusionhubtool.github.io/Tools/index">Home</a>
-    <a href="https://fusionhubtool.github.io/Tools/about">About</a>
-    <a href="https://fusionhubtool.github.io/Tools/Privacy">Privacy Policy</a>
-    <a href="https://fusionhubtool.github.io/Tools/contact">Contact</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
+  <header> <span style="font-size:30px;cursor:pointer;color:#fff" onclick="openNav()">&#9776;</span></header>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="https://fusionhubtool.github.io/Tools/index.html">Home</a>
+    <a href="https://fusionhubtool.github.io/Tools/about.html">About</a>
+    <a href="https://fusionhubtool.github.io/Tools/Privacy.html">Privacy Policy</a>
+    <a href="https://fusionhubtool.github.io/Tools/contact.html">Contact</a>
   </div>
-</header><br><br><br><br>
-    <script>
-  function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
+  
+  
+  
+  <script>
+  function openNav(){
+    document.getElementById("mySidenav").style.width = "250px"
+    document.getElementById("main").style.marginLeft = "250px"
+    document.body.style.backgroundColor = "#131313"
   }
-</script>
-
-<script>
-  window.alert(This Tool is not made yet please dont use it);
-</script>
-
-
-
-    <h1>Security Checker</h1>
-
-<div>
+  
+  function closeNav(){
+    document.getElementById("mySidenav").style.width = "0"
+    document.getElementById("main").style.marginLeft= "0"
+    document.body.style.backgroundColor = "#000"
+  }
+  </script>
+<h1>Security Checker</h1>
+<article>
+  <div>
     <label for="surface-web-progress">Surface Web Progress:</label>
     <div class="progress-bar" id="surface-web-progress">
         <span></span>
@@ -63,14 +74,122 @@
     <div class="progress-bar" id="dark-web-progress">
         <span></span>
     </div>
+</div></article><br><br>
+<article>
+<div>
+    <p>WebRTC Leak Status: <span id="web-rtc-leak-status"></span></p>
+    <p>DNS Leak Status: <span id="getDnsServer"></span></p>
+    <p>IP Leak Status: <span id="ip-leak-status"></span></p>
 </div>
+</article>
 
-    <div>
-        <p>WebRTC Leak Status: <span id="web-rtc-leak-status"></span></p>
-        <p>DNS Leak Status: <span id="dns-leak-status"></span></p>
-        <p>IP Leak Status: <span id="ip-leak-status"></span></p>
-    </div>
 
-    <script src="https://fusionhubtool.github.io/Tools/scripts/mainnet.js"></script>
+<script>
+  (function (w, d, s, o, f, js, fjs) {
+    w["botsonic_widget"] = o;
+    w[o] =
+      w[o] ||
+      function () {
+        (w[o].q = w[o].q || []).push(arguments);
+      };
+    (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+    js.id = o;
+    js.src = f;
+    js.async = 1;
+    fjs.parentNode.insertBefore(js, fjs);
+  })(window, document, "script", "Botsonic", "https://widget.writesonic.com/CDN/botsonic.min.js");
+  Botsonic("init", {
+    serviceBaseUrl: "https://api.botsonic.ai",
+    token: "fc9dd96e-c880-4cdf-b516-fa252f9c4f12",
+  });
+  </script>
+      
+      
+   <footer>
+     <div class="footer-line"></div>
+     <div class="footer-wrapper">
+      <section class="footer-top">
+       <div class="footer-headline">
+   <h2>Subscribe to our newsletter</h2>
+      <p> Stay up to date with our news and articles </p>
+     </div>
+  <div class="footer-subscribe">
+      <input type="email" spellcheck="false" placeholder="Your Email">
+    <button> Sign Up </button>
+        </div>
+          </section>
+   <div class="footer-columns">
+    
+     <section>
+        <h3>Product</h3>
+    <ul>
+   <li>
+    <a href="https://fusionhubtool.github.io/Tools/" title="Pricing">Pricing</a></li>
+   <li>
+    <a href="https://fusionhubtool.github.io/Tools/" title="Documentation">Documentation</a></li>
+   <li>
+    <a href="https://fusionhubtool.github.io/Tools/error.html" title="Status">Status</a></li>
+          </ul>
+            </section>
+    <section>
+       <h3>Resources</h3>
+   <ul>
+    <li>
+     <a href="https://fusionhubtool.github.io/Tools/contact.html" title="Support">Support</a> </li>
+    <li>
+     <a href="https://fusionhubtool.github.io/Tools/contact" title="Help Centre">Help Centre</a></li>
+       </ul>
+          </section>
+   <section>
+      <h3>Company</h3>
+        <ul>
+           <li>
+             <a href="https://fusionhubtool.github.io/Tools/about.html" title="About Us">About Us</a></li>
+           <li>
+             <a href="https://fusionhubtool.github.io/Tools/error.html" title="Blog">Blog</a></li>
+           <li>
+             <a href="https://fusionhubtool.github.io/Tools/contact.html" title="Contact">Contact</a></li>
+             </ul>
+                </section>
+   <section>
+     <h3>Legal</h3>
+       <ul>
+         <li>
+           <a href="https://fusionhubtool.github.io/Tools/README.md" title="Terms and services">Terms</a></li>
+         <li>
+           <a href="https://fusionhubtool.github.io/Tools/Privacy.html" title="Privacy Policy">Privacy</a></li>
+         <li>
+           <a href="https://fusionhubtool.github.io/Tools/error.html" title="Licenses">Licenses</a></li>
+         <li>
+           <a href="https://fusionhubtool.github.io/Tools/error.html" title="Cookies">Contact</a></li>
+         </ul>
+            </section>
+                </div>
+  <div class="footer-bottom">
+    <div class='social-links'>
+      <ul>
+        <li>
+       <a href="instagram.com/fusionhubtools" title="Instagram"><img src="https://fusionhubtool.github.io/Tools/assets/instagram.svg" alt='Instagram'></a></li>
+        <li>
+       <a href="https://fusionhubtool.github.io/Tools/error.html" title="Linkedin"><img src="https://fusionhubtool.github.io/Tools/assets/linkedin.svg" alt='Linkedin'></a></li>
+        <li>
+       <a href="x.com/fusionhub_ind" title="Twitter"><img src="https://fusionhubtool.github.io/Tools/assets/twitter.svg" alt='Twitter'></a></li>
+        <li>
+       <a href="" title="Youtube"><img src="https://fusionhubtool.github.io/Tools/assets/youtube.svg" alt='YouTube'></a></li>
+        <li>
+       <a href="https://github.com/fusionhubtool" title="GitHub"><img src="https://fusionhubtool.github.io/Tools/assets/github.svg" alt='GitHub'></a></li>
+          </ul>
+            </div>
+  
+  <small>© Atheros Intelligence Ltd. <span id="year"></span>, All rights reserved</small>
+  <small>Copyright  &copy; 2023 FusionHubTool - All rights reserved.</small>
+  <small></small>
+                </div>
+            </div>
+        </footer>
+        <script>
+            document.getElementById("year").innerHTML = new Date().getFullYear();
+        </script>
+     </div>
 </body>
 </html>
