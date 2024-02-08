@@ -10,7 +10,7 @@
    
      gtag('config', 'G-78MDV74DXC');
    </script>
-    
+    <!--Meta Data-->
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta property="og:type" content="website"/>
     <meta charset="UTF-8">
@@ -20,7 +20,9 @@
        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
        <link rel="manifest" href="favicon/site.webmanifest">
-       <script src="https://fusionhubtool.github.io/Tools/scripts/mainnet"></script>
+       <script src="https://fusionhubtool.github.io/Tools/scripts/mainnet.js"></script>
+       
+     <!--Style-->
     <style>
             .progress-bar{
       height: 20px;
@@ -37,6 +39,7 @@
     <link rel="stylesheet" href="https://fusionhubtool.github.io/Tools/Styles/style.css">
 </head>
 <body>
+  <!--Header-->
   <header> <span style="font-size:30px;cursor:pointer;color:#fff" onclick="openNav()">&#9776;</span></header>
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -46,7 +49,7 @@
     <a href="https://fusionhubtool.github.io/Tools/contact.html">Contact</a>
   </div>
   
-  
+  <!--Header Script-->
   
   <script>
   function openNav(){
@@ -81,9 +84,9 @@
     <p>DNS Leak Status: <span id="getDnsServer"></span></p>
     <p>IP Leak Status: <span id="ip-leak-status"></span></p>
 </div>
-</article>
+</article><br>
 
-
+<!--FusionHub Helper-->
 <script>
   (function (w, d, s, o, f, js, fjs) {
     w["botsonic_widget"] = o;
@@ -103,8 +106,44 @@
     token: "fc9dd96e-c880-4cdf-b516-fa252f9c4f12",
   });
   </script>
-      
-      
+      <!--DNS Check-->
+ <script>
+   const os = require('os');
+const dns = require('dns');
+
+function getDnsServers() {
+  const interfaces = os.networkInterfaces();
+  const dnsServers = [];
+
+  for (const iface in interfaces) {
+    for (const address of interfaces[iface]) {
+      if (address.family === 'IPv4') {
+        dns.resolve4(address.address, (err, addresses) => {
+          if (err) {
+            console.error(`Error resolving ${address.address}: ${err.message}`);
+          } else {
+            dnsServers.push(...addresses);
+          }
+        });
+      } else if (address.family === 'IPv6') {
+        dns.resolve6(address.address, (err, addresses) => {
+          if (err) {
+            console.error(`Error resolving ${address.address}: ${err.message}`);
+          } else {
+            dnsServers.push(...addresses);
+          }
+        });
+      }
+    }
+  }
+
+  return dnsServers;
+}
+
+console.log('DNS Servers:', getDnsServers());
+
+ </script>    
+ 
    <footer>
      <div class="footer-line"></div>
      <div class="footer-wrapper">

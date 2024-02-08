@@ -239,44 +239,6 @@ article {
   height: 8px;
 }
 
-.footer-subscribe {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.footer-subscribe>input {
-  border: 1px solid var(--button-border);
-  color: var(--text-color);
-  outline: none;
-  min-height: 36px;
-  background-color: var(--footer-background);
-  font-size: 1.2rem;
-  flex: 1 0 120px;
-  padding: 8px 12px;
-  border-radius: 8px;
-}
-
-.footer-subscribe>input::placeholder {
-  color: var(--text-color);
-}
-
-.footer-subscribe>button {
-  cursor: pointer;
-  background-color: var(--button-color);
-  border-radius: 8px;
-  color: rgba(77, 66, 66, 0.413);
-  font-size: 1.25rem;
-  min-width: 120px;
-  min-height: 36px;
-  flex: 1 0 80px;
-  white-space: nowrap;
-  padding: 8px 12px;
-  border: 0px;
-  outline: none;
-  border: 1px solid var(--button-border);
-}
-
 .footer-columns {
   display: flex;
   flex-direction: row;

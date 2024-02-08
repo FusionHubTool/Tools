@@ -1,39 +1,4 @@
 
-const os = require('os');
-const dns = require('dns');
-
-function getDnsServers() {
-  const interfaces = os.networkInterfaces();
-  const dnsServers = [];
-
-  for (const iface in interfaces) {
-    for (const address of interfaces[iface]) {
-      if (address.family === 'IPv4') {
-        dns.resolve4(address.address, (err, addresses) => {
-          if (err) {
-            console.error(`Error resolving ${address.address}: ${err.message}`);
-          } else {
-            dnsServers.push(...addresses);
-          }
-        });
-      } else if (address.family === 'IPv6') {
-        dns.resolve6(address.address, (err, addresses) => {
-          if (err) {
-            console.error(`Error resolving ${address.address}: ${err.message}`);
-          } else {
-            dnsServers.push(...addresses);
-          }
-        });
-      }
-    }
-  }
-
-  return dnsServers;
-}
-
-console.log('DNS Servers:', getDnsServers());
-
-
 async function checkVulnerabilities() {
   const [surfaceWebProgress, darkWebProgress] = await Promise.all([
     checkSurfaceWebVulnerabilities(),
