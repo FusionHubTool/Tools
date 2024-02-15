@@ -1,5 +1,4 @@
 body {
-  font-family: Arial, sans-serif;
   background: black;
   color: #333;
   overflow-x: hidden;
@@ -21,16 +20,64 @@ body {
 /*header {
   background-image: url(https://fusionhubtool.github.io/Tools/Images/bgvideo.gif);
 }*/
-header {
-  background-image: url("https://fusionhubtool.github.io/Tools/Images/bgvideo.gif");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 30%;
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+  overflow-x:  hidden !important;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: rgb(5, 0, 0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidenav{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient( to right, #1f0202, #08021b);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover{
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn{
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main{
+  transition: margin-left .5s;
+  padding: 0px;
+  padding-top: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
 h1 {
@@ -88,48 +135,78 @@ p {
   overflow: scroll;
 }
 
-  article p{
-    color: #000;
-    font-family: Georgia, serif;
+@keyframes gradient {
+  0% {
+    background-image: linear-gradient(60deg, #f787878e, #cff883a0, #8bf9c996, #91deffaf);
   }
-
-  article h2 {
-    color: #007bff;
-    font-family: comic sans ms;
+  20% {
+    background-image: linear-gradient(120deg, #f8c5818e, #b3fb83a0, #92fcef96, #8096f9c5);
   }
-
-  article a {
-    text-decoration: none;
-    border: 3px;
-    border-radius: 6px;
-    background-color: rgba(95,99,104,.38);
-
+  40% {
+    background-image: linear-gradient(200deg, #e5fa859a, #86fd9ea0, #839df996, #c18cf67f);
   }
-
-  article a:hover {
-    padding: 3px;
-    background-color: rgb(26,115,232);
-    transition: .5s;
-    color: black;
+  60% {
+    background-image: linear-gradient(240deg, #f082828e, #caf47ba0, #87f8c796, #91deffae);
   }
+  80% {
+    background-image: linear-gradient(300deg, #fcca8898, #a2f56aa0, #80f7e996, #7f96fba6);
+  }
+  100% {
+    background-image: linear-gradient(360deg, #e6fd839a, #8bf8a1a0, #9eb0f396, #c28df77f);
+  }
+}
 
-
-@media screen and (min-width: 1024px) {
- article img {
-  position: left;
-  height: 180px;
- }
+.background-gradient {
+  animation: gradient 10s ease-in-out infinite;
+  transition: background-image 0.5s ease-in-out;
 }
 
 article {
-  background-image: repeating-linear-gradient( #f7c9c9f2,#9de19dcf,#9999f296);
-  padding: 20px;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
   text-align: center;
-  color: #333;
-  text-wrap: wrap;
+  color: #000;
+  background-image: linear-gradient(#f8acac8e, #d8f5a3a0, #9cf6cf96, #aae1f9);
+}
+
+article:hover {
+  border-radius: 20px;
+  box-shadow: 20px 0px 30px 10px rgba(134, 253, 221, 0.507);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #000;
+  animation: gradient 3s ease-in-out infinite;
+}
+
+article img {
+  align-items: center;
+  width: 250px;
+  height: 180px;
+}
+
+article p {
+  color: #000;
+  font-family: Georgia, serif;
+}
+
+article h2 {
+  color: #070708;
+  font-family: comic sans ms;
+}
+
+article a {
+  text-decoration: none;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  background-color: rgba(95, 99, 104, .38);
+}
+
+article a:hover {
+  padding: 3px;
+  background-color: rgba(62, 145, 253, 0.665);
+  transition: .5s;
+  color: black;
 }
 
 .alert {
