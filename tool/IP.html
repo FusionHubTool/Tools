@@ -16,13 +16,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
       <link rel="stylesheet" href="https://fusionhubtool.github.io/Tools/Styles/style.css">
-      <!-- Screenshot -->
-      <style>
-        @media print { html, body { display: none; } }
-      </style>
-      
+      <!-- Screenshot-->
       <script>
         window.onload = function() { alert("Please do not take screenshots or screen recordings of this page."); }
+        </script>
+        
+      <script>  
+        document.addEventListener('contextmenu', (e) =>{
+          e.preventDefault();
+        });
       </script>
 </head>
 <body>
@@ -90,7 +92,7 @@ There are two main types of IP addresses:<br><br>
 <b>IPv6 addresses:</b> IPv6 addresses were created to address the shortage of IPv4 addresses. They are represented as a set of eight groups of four hexadecimal digits separated by colons, such as 2001:0db8:85a3:0000:0000:8a2e:0370:7334. This gives a total of 340,282,366,920,938,463,463,374,607,431,768,<br>211,456 possible IPv6 addresses.<br><br>
 
 IP addresses are essential for the functioning of the Internet. They allow devices to communicate with each other by providing a unique way to identify and locate them.<br>
-   </article><hr>
+   </article>
       <br>
 
 
