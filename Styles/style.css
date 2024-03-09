@@ -153,6 +153,9 @@ p {
   animation: gradient 10s ease-in-out infinite;
   transition: background-image 0.5s ease-in-out;
 }
+.background-gradient:hover{
+  animation: gradient 5s ease-in-out infinite;
+}
 
 article {
   border-radius: 20px;
@@ -169,7 +172,6 @@ article:hover {
   font-family: Arial, sans-serif;
   text-align: center;
   color: #000;
-  animation: gradient 5s ease-in-out infinite;
 }
 
 article img {
