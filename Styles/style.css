@@ -23,7 +23,7 @@ body {
 }
 
 header{
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 1;
@@ -170,7 +170,7 @@ article {
 
 article:hover {
   border-radius: 20px;
-  box-shadow: 0px 5px 20px 10px rgba(157, 248, 223, 0.358);
+  box-shadow: 0px 5px 20px 10px #554E57D4;
   font-family: Arial, sans-serif;
   text-align: center;
   color: #000;
@@ -218,7 +218,7 @@ article a:hover {
 .alert {
   text-align: center;
   padding: 30px;
-  background-color: #0d0d0d;
+  background-color: #9C86A13B;
   color: #f70101;
   margin-bottom: 15px;
 }
