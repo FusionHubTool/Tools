@@ -39,14 +39,14 @@
 
 
 <h3 class="how-to-use">How to Use</h3><br><br>Using the tools on our website is straightforward:<br><br>
-<li>1.<b>IP Address Retrieval:</b><br><br>Simply visit the IP address retrieval tool page, and your public IP address will be displayed on the screen.</li><br><br>
+<li>1.<b>IP Address Retrieval:</b><br><br>Simply visit the <a href="http://fusionhubtool.github.io/Tools/tool/IP.html">IP address</a> retrieval tool page, and your public IP address will be displayed on the screen.</li><br><br>
 
 <li>2. <b>IP Location</b><br><br> 
- • Navigate to the IP Location tool.<br> • Enter the IP address you want to geolocate.<br>
+ • Navigate to the  <a href="http://fusionhubtool.github.io/Tools/tool/IPlo.html">IP Location</a> tool.<br> • Enter the IP address you want to geolocate.<br>
  • Click the Get Details button.<br> 
  The geolocation data will be presented, including the country, region, city, and coordinates etc.</li><br><br>
  
-<li>3. <b>[Additional Tool Name]:</b><br><br>    [Provide step-by-step instructions for any additional tools you offer on your website.]</li><br><br>
+<li>3. <b>Network Provider</b><br><br>    • Visit  <a href="http://fusionhubtool.github.io/Tools/tool/np.html">Network Provider</a> Page <br></li><br><br>
 <h3 class="privacy-and-data-usage">Privacy and Data Usage</h3><br><br>We take your privacy seriously. When using our services, please be aware of the following:<br><br>
 <li> <b>Data Security:</b> We do not store any data provided by users. Your privacy is important to us, and we take measures to ensure the security of the information you submit.</li><br><br>
 <li> <b>Third-Party Services:</b> Our geolocation tool may utilize third-party services to retrieve and display location information. Please review their privacy policies for more information</b><br><br>
@@ -61,10 +61,6 @@
   <img src="https://github-readme-stats.vercel.app/api?username=Fusionhubtool&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false&order=1" height="150" alt="stats graph"  />
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Fusionhubtool&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false&order=2" height="150" alt="languages graph"  />
 </div>
-
-###
-
-<img src="https://raw.githubusercontent.com/Fusionhubtool/Fusionhubtool/output/snake.svg" alt="Snake animation" />
 
 ###
 
@@ -83,7 +79,7 @@
 ###
 
 <div align="center">
-  <a href="x.com/fusionhub_ind"<img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/twitter/default.svg" width="52" height="40" alt="twitter logo"/>/</a>
+  <a href="x.com/fusionhub_ind"><img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/twitter/default.svg" width="52" height="40" alt="twitter logo"/>/</a>
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" width="52" height="40" alt="instagram logo"/>
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/gmail/default.svg" width="52" height="40" alt="gmail logo"/>
 </div>
