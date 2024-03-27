@@ -1,7 +1,6 @@
 body {
   background: black;
   color: #333;
-  padding-top: 3%;
   margin: 0px;
   background: rgb(250,211,228);
   background: radial-gradient(circle, rgba(250,211,228,1) 0%, rgba(229,213,242,0.9915615904564951) 40%, rgba(246,246,250,0.9915615904564951) 74%, rgba(226,229,245,1) 91%, rgba(205,224,246,1) 100%);
@@ -129,6 +128,47 @@ p {
   overflow: scroll;
 }
 
+.popular {
+  float: right;
+  display: flex;
+  flex: right;
+  padding-top: 0px;
+  background: red;
+  position: relative; /* Add this line */
+}
+
+.popular:hover {
+  float: right;
+  display: flex;
+  flex: right;
+  padding-top: 0px;
+  background: red;
+  width: 70px;
+  height: 30px;
+  transition-property: ease;
+  transition-delay: .5s;
+}
+
+.popular::after {
+  content: "Most Popular"; /* Add this line */
+  position: absolute; /* Add this line */
+  bottom: -20px; /* Adjust this value to position the text vertically */
+  left: 0; /* Add this line */
+  right: 0; /* Add this line */
+  text-align: center; /* Add this line */
+  background-color: red; /* Change this to the background color of the parent element */
+  color: white; /* Change this to the text color */
+  padding: 5px 10px; /* Adjust this to change the size of the text box */
+  border-radius: 5px; /* Add some rounding to the text box */
+  opacity: 0; /* Add this line */
+  transition: opacity .5s ease; /* Add this line */
+}
+
+.popular:hover::after {
+  opacity: 1; /* Add this line */
+} 
+
+
 @keyframes gradient {
   0% {
     background-image: linear-gradient(60deg, #f787878e, #cff883a0, #8bf9c996, #91deffaf);
@@ -194,9 +234,9 @@ article h2 {
 
 article a {
   text-decoration: none;
-  border: 3px solid rgba(0, 0, 0, 0.1);
+  border: 0px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
-  background-color: rgba(95, 99, 104, .38);
+  background-color: rgb(123 237 174 / 28%);
 }
 
 article a:hover {
