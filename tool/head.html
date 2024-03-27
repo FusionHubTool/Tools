@@ -23,6 +23,16 @@
 
 <script> 
 async function checkHeaders() { const url = document.getElementById('url').value; try { const response = await fetch(url, { method: 'HEAD' }); const headers = response.headers; let output = `<table border="1"><tr><th>Header</th><th>Value</th></tr>`; for (let pair of headers.entries()) { output += `<tr><td>${pair[0]}</td><td>${pair[1]}</td></tr>`; } output += '</table>'; document.getElementById('output').innerHTML = output; } catch (error) { document.getElementById('output').innerHTML = `Error: ${error.message}`; } } </script>   
+
+      <style>
+            article{
+                  width: 100%;
+            }
+            article:hover{
+                  width:100%;
+            }
+      </style>
+
 </head>
 <body>
    <!--Header-->
