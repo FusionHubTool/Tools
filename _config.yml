@@ -1,1 +1,6 @@
-theme: jekyll-theme-minimal
+# _config.yml
+
+# Site settings
+title: Your Site Title
+email: your.email@example.com
+description: >- # this means to ignore newlines until "
