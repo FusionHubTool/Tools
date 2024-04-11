@@ -1,6 +1,18 @@
+# Set a custom header to indicate that the subdomain is an authentication subdomain
 auth_subdomain: true
+
+# Set the Strict-Transport-Security header to enforce secure (HTTP over SSL/TLS) connections to the server
 headers:
   Strict-Transport-Security: "max-age=31536000; includeSubDomains; preload"
+
+# Set the X-XSS-Protection header to enable the Cross-site scripting (XSS) filter in most modern web browsers
+headers:
   X-XSS-Protection: "1; mode=block"
+
+# Set the Content-Security-Policy header to restrict the sources of scripts, styles, and other resources on the website
+headers:
   Content-Security-Policy: "default-src 'self';"
+
+# Set the X-Frame-Options header to prevent clickjacking attacks by ensuring that the website is not embedded within an iframe on another site
+headers:
   X-Frame-Options: "SAMEORIGIN"
