@@ -1,6 +1,6 @@
 # _config.yml
 
 # Site settings
-title: Your Site Title
-email: your.email@example.com
-description: >- # this means to ignore newlines until "
+title: # The title of your website, which will be displayed in the browser tab and other places.
+email: # Your email address, which will be used for contact forms and other features that require an email address.
+description: >- # A brief description of your website, which will be used in search engine listings and other places. The ">" symbol indicates that newlines should be ignored in this field.
